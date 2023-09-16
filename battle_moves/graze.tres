@@ -10,9 +10,9 @@
 
 [resource]
 script = ExtResource( 6 )
-name = "[SIF] Graze"
+name = "SIF_MOVE_GRAZE_NAME"
 category_name = "MOVE_CATEGORY_MISC"
-description = "Removes Plant Walls and Plant effects from a target. The user is healed a little based on the effects' duration."
+description = "SIF_MOVE_DESCRIPTION_GRAZE"
 title_override = ""
 tags = [ "sif", "support", "any" ]
 priority = 0
@@ -45,7 +45,7 @@ attribute_profile = ExtResource( 7 )
 camera_state_override = ""
 purge_status_effects = [ ExtResource( 3 ), ExtResource( 5 ) ]
 purge_walls_of_type = [ ExtResource( 2 ) ]
-purge_status_effects_toast = "Grazed"
+purge_status_effects_toast = "SIF_BATTLE_TOAST_WEEDS_GRAZED"
 percent_hp_heal_per_stack = 5
 absolute_hp_heal_per_stack = 0
 heal_recipient = 0

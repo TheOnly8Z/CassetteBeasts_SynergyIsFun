@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://mods/synergy_is_fun/sif_localization.en.translation" ]
+
+source_file="res://mods/synergy_is_fun/sif_localization.csv"
+dest_files=[ "res://mods/synergy_is_fun/sif_localization.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

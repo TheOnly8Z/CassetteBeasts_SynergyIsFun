@@ -11,9 +11,9 @@
 
 [resource]
 script = ExtResource( 3 )
-name = "[SIF] Weedkiller"
+name = "SIF_MOVE_WEEDKILLER_NAME"
 category_name = "MOVE_CATEGORY_RANGED"
-description = "Hits a whole team twice, removing Leeched and Healing Leaf on contact. Does not cause reactions on Plant-type targets."
+description = "SIF_MOVE_DESCRIPTION_WEEDKILLER"
 title_override = ""
 tags = [ "sif", "any", "offense" ]
 priority = 0
@@ -57,7 +57,7 @@ destroys_walls = false
 require_target_tag = ""
 destroys_walls_of_type = [ ExtResource( 4 ) ]
 purge_status_effects = [ ExtResource( 1 ), ExtResource( 6 ) ]
-purge_status_effects_toast = "Weeds Removed"
+purge_status_effects_toast = "SIF_BATTLE_TOAST_WEEDS_REMOVED"
 always_critical_against_types = [  ]
 no_chemistry_against_types = [ ExtResource( 4 ) ]
 user_wall_type = [  ]

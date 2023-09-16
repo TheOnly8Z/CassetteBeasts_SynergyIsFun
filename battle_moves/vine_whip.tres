@@ -8,9 +8,9 @@
 
 [resource]
 script = ExtResource( 2 )
-name = "[SIF] Vine Whip"
+name = "SIF_MOVE_VINE_WHIP_NAME"
 category_name = "MOVE_CATEGORY_RANGED"
-description = "Hits one target. On hit, creates a wall for the user that will absorb up to 2 hits for up to 2 turns."
+description = "SIF_MOVE_DESCRIPTION_VINE_WHIP"
 title_override = ""
 tags = [ "sif", "offense", "any" ]
 priority = 0

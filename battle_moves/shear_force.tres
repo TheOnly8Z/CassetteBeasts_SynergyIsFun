@@ -11,9 +11,9 @@
 
 [resource]
 script = ExtResource( 7 )
-name = "[SIF] Shear Force"
+name = "SIF_MOVE_SHEAR_FORCE_NAME"
 category_name = "MOVE_CATEGORY_MELEE"
-description = "Hits one target twice. Destroys Plant Walls, and removes Plant effects on contact. Lands critical hits on Plant-type targets."
+description = "SIF_MOVE_DESCRIPTION_SHEAR_FORCE"
 title_override = ""
 tags = [ "sif", "any", "offense" ]
 priority = 0
@@ -57,7 +57,7 @@ destroys_walls = false
 require_target_tag = ""
 destroys_walls_of_type = [ ExtResource( 3 ) ]
 purge_status_effects = [ ExtResource( 2 ), ExtResource( 6 ) ]
-purge_status_effects_toast = "Weeds Removed"
+purge_status_effects_toast = "SIF_BATTLE_TOAST_WEEDS_REMOVED"
 always_critical_against_types = [ ExtResource( 3 ) ]
 no_chemistry_against_types = [  ]
 user_wall_type = [  ]

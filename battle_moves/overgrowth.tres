@@ -6,11 +6,11 @@
 
 [resource]
 script = ExtResource( 2 )
-name = "[SIF] Overgrowth"
+name = "SIF_MOVE_OVERGROWTH_NAME"
 category_name = "MOVE_CATEGORY_STATUS"
-description = "Creates a wall for everyone on the battlefield that will absorb up to 3 hits for up to 3 turns."
+description = "SIF_MOVE_DESCRIPTION_OVERGROWTH"
 title_override = ""
-tags = [ "sif", "plant", "wall", "support" ]
+tags = [ "sif", "any", "support" ]
 priority = 0
 cost = 4
 is_debug = false

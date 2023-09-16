@@ -7,9 +7,9 @@
 
 [resource]
 script = ExtResource( 3 )
-name = "[SIF] Wild Growth"
+name = "SIF_MOVE_WILD_GROWTH_NAME"
 category_name = "MOVE_CATEGORY_STATUS"
-description = "Gives a random target Healing Leaf for 2 turns, at the end of the turn."
+description = "SIF_MOVE_DESCRIPTION_WILD_GROWTH"
 title_override = ""
 tags = [ "sif", "any", "passive" ]
 priority = 0

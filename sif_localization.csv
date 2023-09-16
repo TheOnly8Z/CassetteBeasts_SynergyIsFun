@@ -1,0 +1,15 @@
+key,en
+SIF_MOVE_GRAZE_NAME,[SIF] Graze
+SIF_MOVE_DESCRIPTION_GRAZE,Removes Plant Walls and Plant effects from a target. The user is healed a little based on the effects' duration.
+SIF_MOVE_OVERGROWTH_NAME,[SIF] Overgrowth
+SIF_MOVE_DESCRIPTION_OVERGROWTH,Creates a wall for everyone on the battlefield that will absorb up to 3 hits for up to 3 turns.
+SIF_MOVE_SHEAR_FORCE_NAME,[SIF] Shear Force
+SIF_MOVE_DESCRIPTION_SHEAR_FORCE,"Hits one target twice. Destroys Plant Walls, and removes Plant effects on contact. Lands critical hits on Plant-type targets."
+SIF_MOVE_VINE_WHIP_NAME,[SIF] Vine Whip
+SIF_MOVE_DESCRIPTION_VINE_WHIP,"Hits one target. On hit, creates a wall for the user that will absorb up to 2 hits for up to 2 turns."
+SIF_MOVE_WEEDKILLER_NAME,[SIF] Weedkiller
+SIF_MOVE_DESCRIPTION_WEEDKILLER,"Hits a whole team twice, removing Plant effects on contact. Does not cause reactions on Plant-type targets."
+SIF_MOVE_WILD_GROWTH_NAME,[SIF] Wild Growth
+SIF_MOVE_DESCRIPTION_WILD_GROWTH,"Gives a random target Healing Leaf for 2 turns, at the end of the turn."
+SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
+SIF_BATTLE_TOAST_WEEDS_GRAZED,Weeds Grazed

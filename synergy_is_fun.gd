@@ -2,7 +2,11 @@ extends ContentInfo
 
 var sif_loaded:bool = false
 
-var sif_stickers = {
+const MOD_STRINGS:Array = [
+	preload("sif_localization.en.translation"),
+]
+
+var sif_stickers:Dictionary = {
 	"sif_weedkiller": preload("res://mods/synergy_is_fun/battle_moves/weedkiller.tres"),
 	"sif_shear_force": preload("res://mods/synergy_is_fun/battle_moves/shear_force.tres"),
 	"sif_vine_whip": preload("res://mods/synergy_is_fun/battle_moves/vine_whip.tres"),
@@ -12,11 +16,17 @@ var sif_stickers = {
 }
 
 func _init():
+	
+	# Add translation strings
+	for translation in MOD_STRINGS:
+		TranslationServer.add_translation(translation)
+
 	Console.register("sif_stickers", {
 		"description":"Give stickers from Synergy is Fun", 
 		"args":[], 
 		"target":[self, "_console_sif_stickers"]
 	})
+
 	SceneManager.preloader.connect("singleton_setup_completed", self, "_init_stickers")
 
 func _init_stickers():
