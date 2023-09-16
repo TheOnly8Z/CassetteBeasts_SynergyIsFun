@@ -1,0 +1,43 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=1]
+[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_WallStatusMove.gd" type="Script" id=2]
+[ext_resource path="res://data/sticker_attribute_profiles/status.tres" type="Resource" id=3]
+
+[resource]
+script = ExtResource( 2 )
+name = "[SIF] Overgrowth"
+category_name = "MOVE_CATEGORY_STATUS"
+description = "Creates a wall for everyone on the battlefield that will absorb up to 3 hits for up to 3 turns."
+title_override = ""
+tags = [ "sif", "plant", "wall", "support" ]
+priority = 0
+cost = 4
+is_debug = false
+is_passive_only = false
+power = 0
+physicality = 1
+target_type = 3
+default_target = 1
+elemental_types = [ ExtResource( 1 ) ]
+accuracy = 100
+unavoidable = true
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = true
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [  ]
+play_attack_vfx_against_allies = false
+attack_duration = 0.0
+hit_vfx = [  ]
+hit_delay = 0.0
+disable_melee_movement = false
+can_be_copied = true
+attribute_profile = ExtResource( 3 )
+camera_state_override = ""
+amount = 3
+sacrifice_hp_percent = 0

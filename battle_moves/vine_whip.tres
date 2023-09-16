@@ -1,13 +1,14 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=1]
 [ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_GenericAttack.gd" type="Script" id=2]
 [ext_resource path="res://data/hit_vfx/hit.tres" type="Resource" id=3]
 [ext_resource path="res://data/attack_vfx/woodcutter.tres" type="Resource" id=4]
+[ext_resource path="res://data/sticker_attribute_profiles/attack.tres" type="Resource" id=5]
 
 [resource]
 script = ExtResource( 2 )
-name = "Vine Whip"
+name = "[SIF] Vine Whip"
 category_name = "MOVE_CATEGORY_RANGED"
 description = "Hits one target. On hit, creates a wall for the user that will absorb up to 2 hits for up to 2 turns."
 title_override = ""
@@ -38,6 +39,7 @@ hit_vfx = [ ExtResource( 3 ) ]
 hit_delay = 0.0
 disable_melee_movement = false
 can_be_copied = true
+attribute_profile = ExtResource( 5 )
 camera_state_override = ""
 min_hits = 1
 max_hits = 1

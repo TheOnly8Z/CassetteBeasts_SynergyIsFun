@@ -1,0 +1,49 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=1]
+[ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=2]
+[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_PassiveRoundStatus.gd" type="Script" id=3]
+[ext_resource path="res://data/sticker_attribute_profiles/pure_passive_status.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 3 )
+name = "[SIF] Wild Growth"
+category_name = "MOVE_CATEGORY_STATUS"
+description = "Gives a random target Healing Leaf for 2 turns, at the end of the turn."
+title_override = ""
+tags = [ "sif", "any", "passive" ]
+priority = 0
+cost = 0
+is_debug = false
+is_passive_only = true
+power = 0
+physicality = 1
+target_type = 0
+default_target = 0
+elemental_types = [ ExtResource( 1 ) ]
+accuracy = 100
+unavoidable = true
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = false
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [  ]
+play_attack_vfx_against_allies = true
+attack_duration = 0.0
+hit_vfx = [  ]
+hit_delay = 0.0
+disable_melee_movement = false
+can_be_copied = true
+attribute_profile = ExtResource( 4 )
+camera_state_override = ""
+passive_effect_target_type = 0
+passive_effect_target_team = 0
+passive_effect_target_self = true
+passive_effects = [ ExtResource( 2 ) ]
+passive_effects_to_apply = 0
+passive_effect_amount = 2
+passive_effect_chance = 100

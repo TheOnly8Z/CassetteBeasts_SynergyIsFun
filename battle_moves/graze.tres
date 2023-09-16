@@ -1,0 +1,51 @@
+[gd_resource type="Resource" load_steps=8 format=2]
+
+[ext_resource path="res://data/elemental_types/beast.tres" type="Resource" id=1]
+[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=2]
+[ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=3]
+[ext_resource path="res://data/hit_vfx/status_leeched_1.tres" type="Resource" id=4]
+[ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=5]
+[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_PurgeStatusToHeal.gd" type="Script" id=6]
+[ext_resource path="res://data/sticker_attribute_profiles/misc.tres" type="Resource" id=7]
+
+[resource]
+script = ExtResource( 6 )
+name = "[SIF] Graze"
+category_name = "MOVE_CATEGORY_MISC"
+description = "Removes Plant Walls and Plant effects from a target. The user is healed a little based on the effects' duration."
+title_override = ""
+tags = [ "sif", "support", "any" ]
+priority = 0
+cost = 2
+is_debug = false
+is_passive_only = false
+power = 0
+physicality = 0
+target_type = 1
+default_target = 0
+elemental_types = [ ExtResource( 1 ) ]
+accuracy = 100
+unavoidable = true
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = true
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [  ]
+play_attack_vfx_against_allies = true
+attack_duration = 0.0
+hit_vfx = [ ExtResource( 4 ) ]
+hit_delay = 0.5
+disable_melee_movement = false
+can_be_copied = true
+attribute_profile = ExtResource( 7 )
+camera_state_override = ""
+purge_status_effects = [ ExtResource( 3 ), ExtResource( 5 ) ]
+purge_walls_of_type = [ ExtResource( 2 ) ]
+purge_status_effects_toast = "Grazed"
+percent_hp_heal_per_stack = 5
+absolute_hp_heal_per_stack = 0
+heal_recipient = 0

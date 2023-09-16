@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=1]
 [ext_resource path="res://data/elemental_types/poison.tres" type="Resource" id=2]
@@ -7,14 +7,15 @@
 [ext_resource path="res://data/hit_vfx/hit_poison.tres" type="Resource" id=5]
 [ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=6]
 [ext_resource path="res://data/attack_vfx/radiation_breath.tres" type="Resource" id=7]
+[ext_resource path="res://data/sticker_attribute_profiles/attack.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 3 )
-name = "Weedkiller"
+name = "[SIF] Weedkiller"
 category_name = "MOVE_CATEGORY_RANGED"
 description = "Hits a whole team twice, removing Leeched and Healing Leaf on contact. Does not cause reactions on Plant-type targets."
 title_override = ""
-tags = [ "sif", "poison", "spray", "machine", "pollution", "offense" ]
+tags = [ "sif", "any", "offense" ]
 priority = 0
 cost = 1
 is_debug = false
@@ -41,6 +42,7 @@ hit_vfx = [ ExtResource( 5 ) ]
 hit_delay = 0.0
 disable_melee_movement = false
 can_be_copied = true
+attribute_profile = ExtResource( 8 )
 camera_state_override = ""
 min_hits = 2
 max_hits = 2

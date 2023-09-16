@@ -6,6 +6,9 @@ var sif_stickers = {
 	"sif_weedkiller": preload("res://mods/synergy_is_fun/battle_moves/weedkiller.tres"),
 	"sif_shear_force": preload("res://mods/synergy_is_fun/battle_moves/shear_force.tres"),
 	"sif_vine_whip": preload("res://mods/synergy_is_fun/battle_moves/vine_whip.tres"),
+	"sif_overgrowth": preload("res://mods/synergy_is_fun/battle_moves/overgrowth.tres"),
+	"sif_wild_growth": preload("res://mods/synergy_is_fun/battle_moves/wild_growth.tres"),
+	"sif_graze": preload("res://mods/synergy_is_fun/battle_moves/graze.tres"),
 }
 
 func _init():
@@ -21,7 +24,7 @@ func _init_stickers():
 		return
 
 	for sticker_id in sif_stickers:
-			_add_sticker(sif_stickers[sticker_id], sticker_id)
+		_add_sticker(sif_stickers[sticker_id], sticker_id)
 
 	sif_loaded = true
 	print("[SIF] Loaded " + str(sif_stickers.size()) + " stickers.")
