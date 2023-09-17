@@ -11,5 +11,7 @@ SIF_MOVE_WEEDKILLER_NAME,[SIF] Weedkiller
 SIF_MOVE_DESCRIPTION_WEEDKILLER,"Hits a whole team twice, removing Plant effects on contact. Does not cause reactions on Plant-type targets."
 SIF_MOVE_WILD_GROWTH_NAME,[SIF] Wild Growth
 SIF_MOVE_DESCRIPTION_WILD_GROWTH,"Gives a random target Healing Leaf for 2 turns, at the end of the turn."
+SIF_MOVE_RUMINATION_NAME,[SIF] Rumination
+SIF_MOVE_DESCRIPTION_RUMINATION,"Consume one turn of Healing Leaf to heal a bit, at the end of the turn. Less effective than Healing Leaf."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
 SIF_BATTLE_TOAST_WEEDS_GRAZED,Weeds Grazed

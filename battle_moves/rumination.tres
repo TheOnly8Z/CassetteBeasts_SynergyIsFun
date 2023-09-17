@@ -1,0 +1,47 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://data/elemental_types/beast.tres" type="Resource" id=1]
+[ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=2]
+[ext_resource path="res://data/sticker_attribute_profiles/pure_passive.tres" type="Resource" id=3]
+[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_PassiveRoundHealFromStatus.gd" type="Script" id=4]
+
+[resource]
+script = ExtResource( 4 )
+name = "SIF_MOVE_RUMINATION_NAME"
+category_name = "MOVE_CATEGORY_MISC"
+description = "SIF_MOVE_DESCRIPTION_RUMINATION"
+title_override = ""
+tags = [ "sif", "any", "passive" ]
+priority = 0
+cost = 0
+is_debug = false
+is_passive_only = true
+power = 0
+physicality = 1
+target_type = 0
+default_target = 0
+elemental_types = [ ExtResource( 1 ) ]
+accuracy = 100
+unavoidable = true
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = true
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [  ]
+play_attack_vfx_against_allies = true
+attack_duration = 0.5
+hit_vfx = [  ]
+hit_delay = 0.0
+disable_melee_movement = true
+can_be_copied = true
+attribute_profile = ExtResource( 3 )
+camera_state_override = ""
+required_status_effects = [ ExtResource( 2 ) ]
+chance = 100
+duration_removed = 1
+percent_hp_heal = 5
+absolute_hp_heal = 1

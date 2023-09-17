@@ -1,0 +1,47 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_WallStatusMove.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = ""
+category_name = ""
+description = ""
+title_override = ""
+tags = [  ]
+priority = 0
+cost = 0
+is_debug = false
+is_passive_only = false
+power = 0
+physicality = 0
+target_type = 0
+default_target = 0
+elemental_types = [  ]
+accuracy = 100
+unavoidable = false
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = true
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [  ]
+play_attack_vfx_against_allies = true
+attack_duration = 0.0
+hit_vfx = [  ]
+hit_delay = 0.0
+disable_melee_movement = false
+can_be_copied = true
+camera_state_override = ""
+wall_elemental_type = [  ]
+amount = 3
+sacrifice_hp_percent = 20
+status_effects = [  ]
+status_effects_to_apply = 0
+status_effects_recipient = 0
+status_effect_amount = 3
+status_effect_chance = 0
+fail_if_status_effect = [  ]
