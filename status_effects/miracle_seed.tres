@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://mods/synergy_is_fun/status_effect_scripts/MiracleSeed.gd" type="Script" id=1]
+[ext_resource path="res://mods/synergy_is_fun/ui/miracle_seed.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "STATUS_MIRACLE_SEED_NAME"
+description = "STATUS_MIRACLE_SEED_DESCRIPTION"
+has_duration = false
+reduce_duration_at = 0
+icon = ExtResource( 2 )
+is_removable = true
+is_transferable = true
+is_buff = true
+is_debuff = false
+is_decoy = false
+always_hidden_from_display = false
+tags = [ "miracle_seed" ]
+toast_on_remove = ""
+vfx_on_add = [  ]
+vfx_on_remove = [  ]
+name_modifier = ""
+sprite_animation_prefix = ""
+sprite_animation_prefix_priority = 0
+toast_before_heal = "STATUS_MIRACLE_SEED_TOAST_BEFORE_HEAL"
+percent_hp_heal = 50
+absolute_hp_heal = 1

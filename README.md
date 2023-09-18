@@ -4,3 +4,7 @@ A WIP mod for Cassette Beasts with the goal of adding more moves that offer syne
 
 ## Move List
 https://docs.google.com/spreadsheets/d/1PVAPvS1KH769mgNRmwgXxsUbR0ZPkDBSG3a3ASYxYGo/edit?usp=sharing
+
+
+## Attribution
+Seed icon created by Smashicons - Flaticon

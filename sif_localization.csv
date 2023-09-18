@@ -15,5 +15,10 @@ SIF_MOVE_RUMINATION_NAME,[SIF] Rumination
 SIF_MOVE_DESCRIPTION_RUMINATION,"Consume one turn of Healing Leaf to heal a bit, at the end of the turn. Less effective than Healing Leaf."
 SIF_MOVE_GROWTH_CHEMICALS_NAME,[SIF] Growth Chemicals
 SIF_MOVE_DESCRIPTION_GROWTH_CHEMICALS,"Poisons the user for 5 turns to create a Plant Wall that will absorb up to 5 hits for up to 5 turns. Fails if the user is already poisoned."
+SIF_MOVE_MIRACLE_SEED_NAME,[SIF] Miracle Seed
+SIF_MOVE_DESCRIPTION_MIRACLE_SEED,"Places a seed on the target with increased priority. The seed restores 50% of the holder's Max HP at the end of their next turn, unless stolen by melee contact."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
 SIF_BATTLE_TOAST_WEEDS_GRAZED,Weeds Grazed
+STATUS_MIRACLE_SEED_TOAST_BEFORE_HEAL,Seed Bloom
+STATUS_MIRACLE_SEED_NAME,Miracle Seed
+STATUS_MIRACLE_SEED_DESCRIPTION,"A character with Miracle Seed will heal 50% of their Max HP at the end of their next turn if it's not stolen by a melee attack."

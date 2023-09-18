@@ -73,7 +73,13 @@ func contact(battle, user, target, _damage, attack_params):
 			var effect = battle.rand.choice(status_effects)
 			apply_status_effect(target, effect, status_effect_amount)
 
-func get_effect_hint(user, _target)->Array:
-	var status = WallStatus.new()
-	status.set_decoy(get_decoy(user))
-	return [status]
+func get_effect_hint(user, target)->Array:
+	var hint = []
+	var wall = WallStatus.new()
+	wall.set_decoy(get_decoy(user))
+	hint.push_back(wall)
+	
+	if status_effects_to_apply == 0 and (target == user or status_effects_recipient != 0):
+		hint.append_array(status_effects)
+	
+	return hint

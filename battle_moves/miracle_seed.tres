@@ -1,0 +1,52 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://data/battle_move_scripts/PureStatus.gd" type="Script" id=1]
+[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=2]
+[ext_resource path="res://data/attack_vfx/doc_leaf.tres" type="Resource" id=3]
+[ext_resource path="res://data/sticker_attribute_profiles/status.tres" type="Resource" id=4]
+[ext_resource path="res://mods/synergy_is_fun/status_effects/miracle_seed.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+name = "SIF_MOVE_MIRACLE_SEED_NAME"
+category_name = "MOVE_CATEGORY_STATUS"
+description = "SIF_MOVE_DESCRIPTION_MIRACLE_SEED"
+title_override = ""
+tags = [ "sif", "any", "support" ]
+priority = 2
+cost = 3
+is_debug = false
+is_passive_only = false
+power = 0
+physicality = 0
+target_type = 1
+default_target = 1
+elemental_types = [ ExtResource( 2 ) ]
+accuracy = 100
+unavoidable = false
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = true
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [ ExtResource( 3 ) ]
+play_attack_vfx_against_allies = true
+attack_duration = 0.0
+hit_vfx = [  ]
+hit_delay = 0.0
+disable_melee_movement = false
+can_be_copied = true
+attribute_profile = ExtResource( 4 )
+camera_state_override = ""
+status_effects = [ ExtResource( 5 ) ]
+amount = 1
+varied_amounts = [  ]
+status_effects_to_apply = 0
+num_at_random = 1
+fail_if_already_present = false
+fail_against_archangels = false
+fail_if_has_tag = ""
+sacrifice_hp_percent = 0
