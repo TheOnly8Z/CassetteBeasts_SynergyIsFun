@@ -13,6 +13,7 @@ var sif_stickers:Dictionary = {
 	"sif_overgrowth": preload("res://mods/synergy_is_fun/battle_moves/overgrowth.tres"),
 	"sif_wild_growth": preload("res://mods/synergy_is_fun/battle_moves/wild_growth.tres"),
 	"sif_graze": preload("res://mods/synergy_is_fun/battle_moves/graze.tres"),
+	"sif_growth_chemicals": preload("res://mods/synergy_is_fun/battle_moves/growth_chemicals.tres"),
 }
 
 func _init():

@@ -1,23 +1,27 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_WallStatusMove.gd" type="Script" id=1]
+[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=2]
+[ext_resource path="res://data/elemental_types/poison.tres" type="Resource" id=3]
+[ext_resource path="res://data/sticker_attribute_profiles/status.tres" type="Resource" id=4]
+[ext_resource path="res://data/status_effects/poisoned.tres" type="Resource" id=5]
 
 [resource]
 script = ExtResource( 1 )
-name = ""
-category_name = ""
-description = ""
+name = "SIF_MOVE_GROWTH_CHEMICALS_NAME"
+category_name = "MOVE_CATEGORY_STATUS"
+description = "SIF_MOVE_DESCRIPTION_GROWTH_CHEMICALS"
 title_override = ""
-tags = [  ]
+tags = [ "sif", "any", "support" ]
 priority = 0
-cost = 0
+cost = 3
 is_debug = false
 is_passive_only = false
 power = 0
 physicality = 0
-target_type = 0
-default_target = 0
-elemental_types = [  ]
+target_type = 1
+default_target = 1
+elemental_types = [ ExtResource( 3 ) ]
 accuracy = 100
 unavoidable = false
 crit_rate_numerator = 1
@@ -33,15 +37,16 @@ play_attack_vfx_against_allies = true
 attack_duration = 0.0
 hit_vfx = [  ]
 hit_delay = 0.0
-disable_melee_movement = false
+disable_melee_movement = true
 can_be_copied = true
+attribute_profile = ExtResource( 4 )
 camera_state_override = ""
-wall_elemental_type = [  ]
-amount = 3
-sacrifice_hp_percent = 20
-status_effects = [  ]
+wall_elemental_type = [ ExtResource( 2 ) ]
+amount = 5
+sacrifice_hp_percent = 0
+status_effects = [ ExtResource( 5 ) ]
 status_effects_to_apply = 0
 status_effects_recipient = 0
-status_effect_amount = 3
-status_effect_chance = 0
-fail_if_status_effect = [  ]
+status_effect_amount = 5
+status_effect_chance = 100
+fail_if_status_effect = [ ExtResource( 5 ) ]
