@@ -6,6 +6,7 @@ const MOD_STRINGS:Array = [
 	preload("sif_localization.en.translation"),
 ]
 
+# No longer used
 var sif_stickers:Dictionary = {
 	"sif_weedkiller": preload("res://mods/synergy_is_fun/battle_moves/weedkiller.tres"),
 	"sif_shear_force": preload("res://mods/synergy_is_fun/battle_moves/shear_force.tres"),
@@ -14,6 +15,8 @@ var sif_stickers:Dictionary = {
 	"sif_wild_growth": preload("res://mods/synergy_is_fun/battle_moves/wild_growth.tres"),
 	"sif_graze": preload("res://mods/synergy_is_fun/battle_moves/graze.tres"),
 	"sif_growth_chemicals": preload("res://mods/synergy_is_fun/battle_moves/growth_chemicals.tres"),
+	"sif_miracle_seed": preload("res://mods/synergy_is_fun/battle_moves/miracle_seed.tres"),
+	"sif_dandelion_puff": preload("res://mods/synergy_is_fun/battle_moves/dandelion_puff.tres"),
 }
 
 func _init():
@@ -33,9 +36,14 @@ func _init():
 func _init_stickers():
 	if sif_loaded:
 		return
+		
+	var battle_moves = Datatables.load("res://mods/synergy_is_fun/battle_moves/").table
 
-	for sticker_id in sif_stickers:
-		_add_sticker(sif_stickers[sticker_id], sticker_id)
+	for move_name in battle_moves:
+		_add_sticker(battle_moves[move_name], "sif_" + move_name)
+
+	#for sticker_id in sif_stickers:
+	#	_add_sticker(sif_stickers[sticker_id], sticker_id)
 
 	sif_loaded = true
 	print("[SIF] Loaded " + str(sif_stickers.size()) + " stickers.")

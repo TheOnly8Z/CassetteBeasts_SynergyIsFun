@@ -50,9 +50,6 @@ func get_decoy(user)->Decoy:
 	return load("res://data/decoys/wall_" + type.id + ".tres") as Decoy
 
 func contact(battle, user, target, _damage, attack_params):
-	var shield = WallStatus.new()
-	shield.set_decoy(get_decoy(user))
-	apply_status_effect(target, shield, amount)
 	
 	var recipients:Array
 	if status_effects_recipient == 0:
@@ -72,6 +69,10 @@ func contact(battle, user, target, _damage, attack_params):
 			assert (status_effects_to_apply == 1)
 			var effect = battle.rand.choice(status_effects)
 			apply_status_effect(target, effect, status_effect_amount)
+
+	var shield = WallStatus.new()
+	shield.set_decoy(get_decoy(user))
+	apply_status_effect(target, shield, amount)
 
 func get_effect_hint(user, target)->Array:
 	var hint = []

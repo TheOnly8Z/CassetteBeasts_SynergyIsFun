@@ -17,6 +17,8 @@ SIF_MOVE_GROWTH_CHEMICALS_NAME,[SIF] Growth Chemicals
 SIF_MOVE_DESCRIPTION_GROWTH_CHEMICALS,"Poisons the user for 5 turns to create a Plant Wall that will absorb up to 5 hits for up to 5 turns. Fails if the user is already poisoned."
 SIF_MOVE_MIRACLE_SEED_NAME,[SIF] Miracle Seed
 SIF_MOVE_DESCRIPTION_MIRACLE_SEED,"Places a seed on the target with increased priority. The seed restores 50% of the holder's Max HP at the end of their next turn, unless stolen by melee contact."
+SIF_MOVE_DANDELION_PUFF_NAME,[SIF] Dandelion Puff
+SIF_MOVE_DESCRIPTION_DANDELION_PUFF,"Hits a whole team. Chance to inflict Leeched. Becomes a Plant-type attack when equipped to an Air-type tape."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
 SIF_BATTLE_TOAST_WEEDS_GRAZED,Weeds Grazed
 STATUS_MIRACLE_SEED_TOAST_BEFORE_HEAL,Seed Bloom
