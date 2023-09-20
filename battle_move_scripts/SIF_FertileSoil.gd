@@ -17,7 +17,7 @@ func notify(fighter, id:String, args):
 			fighter.battle.queue_status_update(fighter)
 
 	if id == "heal_starting" and heal_amp > 0 and args.fighter == fighter:
-		args.heal_amount *= 1 + (heal_amp / 100)
+		args.heal_amount = round(args.heal_amount * (1.0 + (heal_amp / 100.0)))
 
 	if id == "create_damage" and args.target == fighter:
 		if _types_match(args.damage.types):
