@@ -19,8 +19,11 @@ SIF_MOVE_MIRACLE_SEED_NAME,[SIF] Miracle Seed
 SIF_MOVE_DESCRIPTION_MIRACLE_SEED,"Places a seed on the target with increased priority. The seed restores 50% of the holder's Max HP at the end of their next turn, unless stolen by melee contact."
 SIF_MOVE_DANDELION_PUFF_NAME,[SIF] Dandelion Puff
 SIF_MOVE_DESCRIPTION_DANDELION_PUFF,"Hits a whole team. Chance to inflict Leeched.\nBecomes a Plant-type attack when equipped to an Air-type tape."
+SIF_MOVE_HARVEST_SEASON_NAME,[SIF] Harvest Season
+SIF_MOVE_DESCRIPTION_HARVEST_SEASON,"Removes Healing Leaf from everyone on the battlefield, giving each target 1 AP per 2 turns of effect."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
 SIF_BATTLE_TOAST_WEEDS_GRAZED,Weeds Grazed
+SIF_BATTLE_TOAST_HARVEST_SEASON,Harvest Season
 STATUS_MIRACLE_SEED_TOAST_BEFORE_HEAL,Seed Bloom
 STATUS_MIRACLE_SEED_NAME,Miracle Seed
 STATUS_MIRACLE_SEED_DESCRIPTION,"A character with Miracle Seed will heal 50% of their Max HP at the end of their next turn if it's not stolen by a melee attack."

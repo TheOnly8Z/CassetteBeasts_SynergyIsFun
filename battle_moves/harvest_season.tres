@@ -1,0 +1,51 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=1]
+[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_PurgeStatusMove.gd" type="Script" id=2]
+[ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=3]
+[ext_resource path="res://data/sticker_attribute_profiles/misc.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 2 )
+name = "SIF_MOVE_HARVEST_SEASON_NAME"
+category_name = "MOVE_CATEGORY_STATUS"
+description = "SIF_MOVE_DESCRIPTION_HARVEST_SEASON"
+title_override = ""
+tags = [ "sif", "support", "any" ]
+priority = 0
+cost = 0
+is_debug = false
+is_passive_only = false
+power = 0
+physicality = 1
+target_type = 3
+default_target = 1
+elemental_types = [ ExtResource( 1 ) ]
+accuracy = 100
+unavoidable = false
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = true
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [  ]
+play_attack_vfx_against_allies = true
+attack_duration = 0.2
+hit_vfx = [  ]
+hit_delay = 0.0
+disable_melee_movement = false
+can_be_copied = true
+attribute_profile = ExtResource( 4 )
+camera_state_override = ""
+purge_status_effects = [ ExtResource( 3 ) ]
+purge_walls_of_type = [  ]
+purge_status_effects_toast = ""
+toast_on_no_effect = true
+percent_hp_heal_per_stack = 0
+absolute_hp_heal_per_stack = 0
+stack_to_ap = 2
+ap_change_toast = "SIF_BATTLE_TOAST_HARVEST_SEASON"
+effect_recipient = 1

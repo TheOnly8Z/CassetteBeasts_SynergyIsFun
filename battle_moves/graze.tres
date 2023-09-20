@@ -5,13 +5,13 @@
 [ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=3]
 [ext_resource path="res://data/hit_vfx/status_leeched_1.tres" type="Resource" id=4]
 [ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=5]
-[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_PurgeStatusToHeal.gd" type="Script" id=6]
+[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_PurgeStatusMove.gd" type="Script" id=6]
 [ext_resource path="res://data/sticker_attribute_profiles/misc.tres" type="Resource" id=7]
 
 [resource]
 script = ExtResource( 6 )
 name = "SIF_MOVE_GRAZE_NAME"
-category_name = "MOVE_CATEGORY_MISC"
+category_name = "MOVE_CATEGORY_STATUS"
 description = "SIF_MOVE_DESCRIPTION_GRAZE"
 title_override = ""
 tags = [ "sif", "support", "any" ]
@@ -46,6 +46,9 @@ camera_state_override = ""
 purge_status_effects = [ ExtResource( 3 ), ExtResource( 5 ) ]
 purge_walls_of_type = [ ExtResource( 2 ) ]
 purge_status_effects_toast = "SIF_BATTLE_TOAST_WEEDS_GRAZED"
+toast_on_no_effect = true
 percent_hp_heal_per_stack = 5
 absolute_hp_heal_per_stack = 0
-heal_recipient = 0
+stack_to_ap = 0
+ap_change_toast = ""
+effect_recipient = 0

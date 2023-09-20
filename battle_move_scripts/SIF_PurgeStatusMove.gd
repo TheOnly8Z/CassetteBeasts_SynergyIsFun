@@ -2,12 +2,16 @@ extends BattleMove
 
 export (Array, Resource) var purge_status_effects:Array
 export (Array, Resource) var purge_walls_of_type:Array
-export (String) var purge_status_effects_toast:String = "Effects Purged"
+export (String) var purge_status_effects_toast:String = ""
+
+export (bool) var toast_on_no_effect:bool = true
 
 export (int, 0, 100) var percent_hp_heal_per_stack:int = 0
 export (int) var absolute_hp_heal_per_stack:int = 0
+export (int) var stack_to_ap:int = 0
+export (String) var ap_change_toast:String = ""
 
-export (int, "User", "Target") var heal_recipient:int = 0
+export (int, "User", "Target") var effect_recipient:int = 0
 
 func _should_purge_effect(effect, purge_status_effects, purge_walls_of_type):
 	return purge_status_effects.has(effect) or (effect.is_decoy and purge_walls_of_type.has(effect.elemental_type))
@@ -39,18 +43,32 @@ func contact(battle, user, target, _damage, attack_params):
 				num_removed += 1
 
 		var recipient = user
-		if heal_recipient == 1:
+		if effect_recipient == 1:
 			recipient = target
 
-		var toast = battle.create_toast()
 		if num_removed > 0:
-			toast.setup_text(purge_status_effects_toast)
-			var hp = int(max(1, recipient.status.max_hp * percent_hp_heal_per_stack / 100 + absolute_hp_heal_per_stack) * stacks)
-			recipient.get_controller().heal(hp)
-			battle.queue_status_update(recipient, false)
-		else:
+			if percent_hp_heal_per_stack + absolute_hp_heal_per_stack > 0:
+				var hp = int(max(1, recipient.status.max_hp * percent_hp_heal_per_stack / 100 + absolute_hp_heal_per_stack) * stacks)
+				recipient.get_controller().heal(hp)
+			
+			if stack_to_ap != 0:
+				var ap_change = round(stacks / stack_to_ap)
+				if ap_change > 0:
+					ap_change = min(ap_change, recipient.status.max_ap - recipient.status.ap)
+				else:
+					ap_change = min(ap_change, recipient.status.ap)
+				recipient.status.change_ap(ap_change, ap_change_toast)
+
+				battle.queue_status_update(recipient, false)
+
+			if purge_status_effects_toast != "":
+				var toast = battle.create_toast()
+				toast.setup_text(purge_status_effects_toast)
+				battle.queue_play_toast(toast, target.slot)
+		elif toast_on_no_effect:
+			var toast = battle.create_toast()
 			toast.setup_text("BATTLE_TOAST_NO_EFFECT")
-		battle.queue_play_toast(toast, target.slot)
+			battle.queue_play_toast(toast, target.slot)
 
 func get_effect_hint(_user, target):
 	var total = Vector3()
