@@ -7,11 +7,11 @@ export (Array, Resource) var always_critical_against_types:Array
 export (Array, Resource) var no_chemistry_against_types:Array
 
 export (Array, Resource) var user_wall_type:Array
-export (int) var user_wall_amount:int = 3 
+export (int) var user_wall_amount:int = 0
 export (int) var user_wall_chance:int = 100
 
 export (Array, Resource) var target_wall_type:Array
-export (int) var target_wall_amount:int = 3 
+export (int) var target_wall_amount:int = 0
 export (int) var target_wall_chance:int = 100
 
 func contact(battle, user, target, damage, attack_params):
@@ -37,24 +37,29 @@ func contact(battle, user, target, damage, attack_params):
 	elif not damage.reacted:
 		default_contact_effects(battle, user, target, damage)
 
-	# Apply wall to target
-	var target_wall_type = attack_params.get("target_wall_type", self.target_wall_type)
-	if target_wall_type.size() > 0 and battle.rand.rand_int(100) < target_wall_chance:
+	# Apply wall to target. Type is based on specified type, move type, user type, in that order
+	if target_wall_amount > 0 and battle.rand.rand_int(100) < target_wall_chance:
+		var types = get_types(user)
+		var type = preload("res://data/elemental_types/beast.tres")
+		if user_wall_type.size() > 0:
+			type = user_wall_type[0]
+		elif types.size() > 0:
+			type = types[0]
 		var shield = WallStatus.new()
-		shield.set_decoy(load("res://data/decoys/wall_" + target_wall_type[0].id + ".tres"))
+		shield.set_decoy(load("res://data/decoys/wall_" + type.id + ".tres"))
 		apply_status_effect(target, shield, target_wall_amount)
 
 func _pre_contact(battle, user, target, damage):
-	# Type-dependent wall break
-	var destroys_walls_of_type = self.destroys_walls_of_type
-	var decoy_status = target.status.get_current_decoy_effect()
-	if decoy_status != null and destroys_walls_of_type.has(decoy_status.effect.elemental_type):
-		decoy_status.remove()
-
 	# Apply wall to user. Not contact dependent, triggers as long as move doesn't miss
-	if user_wall_type.size() > 0 and battle.rand.rand_int(100) < user_wall_chance:
+	if user_wall_amount > 0 and battle.rand.rand_int(100) < user_wall_chance:
+		var types = get_types(user)
+		var type = preload("res://data/elemental_types/beast.tres")
+		if user_wall_type.size() > 0:
+			type = user_wall_type[0]
+		elif types.size() > 0:
+			type = types[0]
 		var shield = WallStatus.new()
-		shield.set_decoy(load("res://data/decoys/wall_" + user_wall_type[0].id + ".tres"))
+		shield.set_decoy(load("res://data/decoys/wall_" + type.id + ".tres"))
 		apply_status_effect(user, shield, user_wall_amount)
 
 func _is_critical(battle, user, target, damage:Damage)->bool:
@@ -85,15 +90,40 @@ func launch_attack(battle, user, targets:Array, attack_params = {}, on_contact =
 			"damage":damage, 
 			"target":target
 		}
+
 		if not battle.events.notify("attack_starting", notify_args):
 			if _is_unavoidable(user, target) or battle.rand.rand_bool(BattleFormulas.get_hit_chance(damage.accuracy, user, target)):
 				_pre_contact(battle, user, target, damage)
+				
+				# Type-dependent wall break
+				if damage.destroys_walls != true:
+					var destroys_walls_of_type = self.destroys_walls_of_type
+					var decoy_status = target.status.get_current_decoy_effect()
+					if decoy_status != null and destroys_walls_of_type.has(decoy_status.effect.elemental_type):
+						# Ugly hack: Multi hit moves with destroys_walls doesn't kill the wall on first hit.
+						# Create a separate instance of contact to kill the wall, and let the remaining hits go through.
+						if damage.hits > 1 and not damage.ignores_walls \
+						and not (target.status.has_tag("window") and damage.physicality == BattleMove.Physicality.RANGED):
+							damage.hits -= 1
+							var temp_damage = create_damage(battle, user, target, attack_params)
+							temp_damage.hits = 1
+							temp_damage.destroys_walls = true
+							var temp_args = {
+								"fighter":user, 
+								"move":self, 
+								"damage":temp_damage, 
+								"target":target
+							}
+							battle.events.notify("attack_contact_starting", temp_args)
+						else:
+							damage.destroys_walls = true
+				
+				# Make contact and do damage stuff normally.
 				if not battle.events.notify("attack_contact_starting", notify_args):
 					if damage.damage > 0:
 						if not battle.events.notify("attack_damage_starting", notify_args):
 							# No reaction against type
-							var no_chemistry_against_types = attack_params.get("no_chemistry_against_types", self.no_chemistry_against_types)
-							if _has_type_match(target, no_chemistry_against_types):
+							if _has_type_match(target, self.no_chemistry_against_types):
 								target.get_controller().take_damage(damage)
 								damage.reacted = false
 							else:

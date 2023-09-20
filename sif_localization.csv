@@ -1,14 +1,14 @@
 key,en
 SIF_MOVE_GRAZE_NAME,[SIF] Graze
-SIF_MOVE_DESCRIPTION_GRAZE,Removes Plant Walls and Plant effects from a target. The user is healed a little based on the effects' duration.
+SIF_MOVE_DESCRIPTION_GRAZE,Removes Plant Walls and Plant effects from a target.\nThe user is healed a little based on the effects' duration.
 SIF_MOVE_OVERGROWTH_NAME,[SIF] Overgrowth
 SIF_MOVE_DESCRIPTION_OVERGROWTH,Creates a wall for everyone on the battlefield that will absorb up to 3 hits for up to 3 turns.
 SIF_MOVE_SHEAR_FORCE_NAME,[SIF] Shear Force
-SIF_MOVE_DESCRIPTION_SHEAR_FORCE,"Hits one target twice. Destroys Plant Walls, and removes Plant effects on contact. Lands critical hits on Plant-type targets."
+SIF_MOVE_DESCRIPTION_SHEAR_FORCE,"Hits one target twice. Destroys Plant Walls and removes Plant effects on hit."
 SIF_MOVE_VINE_WHIP_NAME,[SIF] Vine Whip
 SIF_MOVE_DESCRIPTION_VINE_WHIP,"Hits one target. On hit, creates a wall for the user that will absorb up to 2 hits for up to 2 turns."
 SIF_MOVE_WEEDKILLER_NAME,[SIF] Weedkiller
-SIF_MOVE_DESCRIPTION_WEEDKILLER,"Hits a whole team twice, removing Plant effects on contact. Does not cause reactions on Plant-type targets."
+SIF_MOVE_DESCRIPTION_WEEDKILLER,"Hits a whole team twice, removing Plant effects on hit.\nDoes not cause reactions on Plant-type targets."
 SIF_MOVE_WILD_GROWTH_NAME,[SIF] Wild Growth
 SIF_MOVE_DESCRIPTION_WILD_GROWTH,"Gives a random target Healing Leaf for 2 turns, at the end of the turn."
 SIF_MOVE_RUMINATION_NAME,[SIF] Rumination
@@ -18,7 +18,7 @@ SIF_MOVE_DESCRIPTION_GROWTH_CHEMICALS,"Poisons the user for 5 turns to create a 
 SIF_MOVE_MIRACLE_SEED_NAME,[SIF] Miracle Seed
 SIF_MOVE_DESCRIPTION_MIRACLE_SEED,"Places a seed on the target with increased priority. The seed restores 50% of the holder's Max HP at the end of their next turn, unless stolen by melee contact."
 SIF_MOVE_DANDELION_PUFF_NAME,[SIF] Dandelion Puff
-SIF_MOVE_DESCRIPTION_DANDELION_PUFF,"Hits a whole team. Chance to inflict Leeched. Becomes a Plant-type attack when equipped to an Air-type tape."
+SIF_MOVE_DESCRIPTION_DANDELION_PUFF,"Hits a whole team. Chance to inflict Leeched.\nBecomes a Plant-type attack when equipped to an Air-type tape."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
 SIF_BATTLE_TOAST_WEEDS_GRAZED,Weeds Grazed
 STATUS_MIRACLE_SEED_TOAST_BEFORE_HEAL,Seed Bloom

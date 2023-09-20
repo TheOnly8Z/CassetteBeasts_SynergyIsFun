@@ -61,5 +61,5 @@ user_wall_type = [ ExtResource( 1 ) ]
 user_wall_amount = 2
 user_wall_chance = 100
 target_wall_type = [  ]
-target_wall_amount = 3
+target_wall_amount = 0
 target_wall_chance = 100

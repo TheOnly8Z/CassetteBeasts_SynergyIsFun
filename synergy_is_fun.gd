@@ -6,17 +6,13 @@ const MOD_STRINGS:Array = [
 	preload("sif_localization.en.translation"),
 ]
 
-# No longer used
-var sif_stickers:Dictionary = {
-	"sif_weedkiller": preload("res://mods/synergy_is_fun/battle_moves/weedkiller.tres"),
-	"sif_shear_force": preload("res://mods/synergy_is_fun/battle_moves/shear_force.tres"),
-	"sif_vine_whip": preload("res://mods/synergy_is_fun/battle_moves/vine_whip.tres"),
-	"sif_overgrowth": preload("res://mods/synergy_is_fun/battle_moves/overgrowth.tres"),
-	"sif_wild_growth": preload("res://mods/synergy_is_fun/battle_moves/wild_growth.tres"),
-	"sif_graze": preload("res://mods/synergy_is_fun/battle_moves/graze.tres"),
-	"sif_growth_chemicals": preload("res://mods/synergy_is_fun/battle_moves/growth_chemicals.tres"),
-	"sif_miracle_seed": preload("res://mods/synergy_is_fun/battle_moves/miracle_seed.tres"),
-	"sif_dandelion_puff": preload("res://mods/synergy_is_fun/battle_moves/dandelion_puff.tres"),
+const MODUTILS: Dictionary = {
+	"class_patch": [
+		{
+			"patch": "res://mods/synergy_is_fun/status_effect_scripts/Patch_WallStatus.gd",
+			"target": "res://data/status_effect_scripts/WallStatus.gd",
+		},
+	],
 }
 
 func _init():
@@ -42,11 +38,8 @@ func _init_stickers():
 	for move_name in battle_moves:
 		_add_sticker(battle_moves[move_name], "sif_" + move_name)
 
-	#for sticker_id in sif_stickers:
-	#	_add_sticker(sif_stickers[sticker_id], sticker_id)
-
 	sif_loaded = true
-	print("[SIF] Loaded " + str(sif_stickers.size()) + " stickers.")
+	print("[SIF] Loaded " + str(battle_moves.size()) + " stickers.")
 
 func _add_sticker(sticker, sticker_id):
 	# Add to global move list. Used in dev console, custom battle scene, etc.
@@ -58,12 +51,12 @@ func _add_sticker(sticker, sticker_id):
 
 	for tag in sticker.tags:
 
-		# Initializes tag "since at this point there hasnt been any other stickers loaded yet".
+		# Initializes tag if it's new.
 		if not BattleMoves.by_tag.has(tag):
 			BattleMoves.by_tag[tag] = []
 		BattleMoves.by_tag[tag].push_back(sticker)
 
-		# Add move to the pool
+		# Add move to the tag pool
 		if not BattleMoves.stickers_by_tag.has(tag):
 			BattleMoves.stickers_by_tag[tag] = []
 		BattleMoves.stickers_by_tag[tag].push_back(sticker)
