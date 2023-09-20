@@ -21,6 +21,8 @@ SIF_MOVE_DANDELION_PUFF_NAME,[SIF] Dandelion Puff
 SIF_MOVE_DESCRIPTION_DANDELION_PUFF,"Hits a whole team. Chance to inflict Leeched.\nBecomes a Plant-type attack when equipped to an Air-type tape."
 SIF_MOVE_HARVEST_SEASON_NAME,[SIF] Harvest Season
 SIF_MOVE_DESCRIPTION_HARVEST_SEASON,"Removes Healing Leaf from everyone on the battlefield, giving each target 1 AP per 2 turns of effect."
+SIF_MOVE_FERTILE_SOIL_NAME,[SIF] Fertile Soil
+SIF_MOVE_DESCRIPTION_FERTILE_SOIL,"The user receives more healing, but incoming Plant-type and Water-type attacks become critical.\nThe duration of Plant effects on the user will not decrease."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
 SIF_BATTLE_TOAST_WEEDS_GRAZED,Weeds Grazed
 SIF_BATTLE_TOAST_HARVEST_SEASON,Harvest Season

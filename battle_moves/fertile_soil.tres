@@ -1,0 +1,48 @@
+[gd_resource type="Resource" load_steps=8 format=2]
+
+[ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=1]
+[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=2]
+[ext_resource path="res://data/elemental_types/water.tres" type="Resource" id=3]
+[ext_resource path="res://data/elemental_types/earth.tres" type="Resource" id=4]
+[ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=5]
+[ext_resource path="res://data/sticker_attribute_profiles/pure_passive.tres" type="Resource" id=6]
+[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_FertileSoil.gd" type="Script" id=7]
+
+[resource]
+script = ExtResource( 7 )
+name = "SIF_MOVE_FERTILE_SOIL_NAME"
+category_name = "MOVE_CATEGORY_MISC"
+description = "SIF_MOVE_DESCRIPTION_FERTILE_SOIL"
+title_override = ""
+tags = [ "sif", "any", "passive" ]
+priority = 0
+cost = 0
+is_debug = false
+is_passive_only = true
+power = 0
+physicality = 0
+target_type = 0
+default_target = 0
+elemental_types = [ ExtResource( 4 ) ]
+accuracy = 100
+unavoidable = false
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = false
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [  ]
+play_attack_vfx_against_allies = true
+attack_duration = 0.0
+hit_vfx = [  ]
+hit_delay = 0.0
+disable_melee_movement = false
+can_be_copied = true
+attribute_profile = ExtResource( 6 )
+camera_state_override = ""
+weaknesses = [ ExtResource( 3 ), ExtResource( 2 ) ]
+heal_amp = 30
+status_effects_to_extend = [ ExtResource( 1 ), ExtResource( 5 ) ]
