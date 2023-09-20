@@ -1,0 +1,50 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=1]
+[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=2]
+[ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=3]
+[ext_resource path="res://data/sticker_attribute_profiles/misc.tres" type="Resource" id=4]
+[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_StatusTrade.gd" type="Script" id=5]
+
+[resource]
+script = ExtResource( 5 )
+name = "SIF_MOVE_CROP_ROTATION_NAME"
+category_name = "MOVE_CATEGORY_STATUS"
+description = "SIF_MOVE_DESCRIPTION_CROP_ROTATION"
+title_override = ""
+tags = [ "sif", "support", "any" ]
+priority = 0
+cost = 2
+is_debug = false
+is_passive_only = false
+power = 0
+physicality = 0
+target_type = 1
+default_target = 2
+elemental_types = [ ExtResource( 2 ) ]
+accuracy = 100
+unavoidable = false
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = true
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [  ]
+play_attack_vfx_against_allies = true
+attack_duration = 0.0
+hit_vfx = [  ]
+hit_delay = 0.0
+disable_melee_movement = false
+can_be_copied = true
+attribute_profile = ExtResource( 4 )
+camera_state_override = ""
+traded_status_effects = [ ExtResource( 1 ), ExtResource( 3 ) ]
+traded_toast = "SIF_BATTLE_TOAST_CROP_ROTATION"
+trade_order = 1
+status_effects = [ ExtResource( 1 ) ]
+status_effects_to_apply = 0
+status_effects_recipient = 0
+status_effect_amount = 4
