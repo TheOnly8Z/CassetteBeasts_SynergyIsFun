@@ -44,5 +44,5 @@ can_be_copied = true
 attribute_profile = ExtResource( 6 )
 camera_state_override = ""
 weaknesses = [ ExtResource( 3 ), ExtResource( 2 ) ]
-heal_amp = 30
+heal_amp = 25
 status_effects_to_extend = [ ExtResource( 1 ), ExtResource( 5 ) ]

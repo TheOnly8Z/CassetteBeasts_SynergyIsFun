@@ -47,6 +47,6 @@ sacrifice_hp_percent = 0
 status_effects = [ ExtResource( 5 ) ]
 status_effects_to_apply = 0
 status_effects_recipient = 0
-status_effect_amount = 5
+status_effect_amount = 3
 status_effect_chance = 100
 fail_if_status_effect = [ ExtResource( 5 ) ]

@@ -1,20 +1,20 @@
 key,en
 SIF_MOVE_GRAZE_NAME,[SIF] Graze
-SIF_MOVE_DESCRIPTION_GRAZE,Removes Plant Walls and Plant effects from a target.\nThe user is healed a little based on the effects' duration.
+SIF_MOVE_DESCRIPTION_GRAZE,Removes Plant Walls and Plant effects from a target.\nThe user heals based on the effects' duration.
 SIF_MOVE_OVERGROWTH_NAME,[SIF] Overgrowth
-SIF_MOVE_DESCRIPTION_OVERGROWTH,Creates a wall for everyone on the battlefield that will absorb up to 3 hits for up to 3 turns.
+SIF_MOVE_DESCRIPTION_OVERGROWTH,"Creates a wall for everyone on the battlefield that will absorb up to 3 hits for up to 3 turns. Has increased priority."
 SIF_MOVE_SHEAR_FORCE_NAME,[SIF] Shear Force
 SIF_MOVE_DESCRIPTION_SHEAR_FORCE,"Hits one target twice. Destroys Plant Walls and removes Plant effects on hit."
 SIF_MOVE_VINE_WHIP_NAME,[SIF] Vine Whip
-SIF_MOVE_DESCRIPTION_VINE_WHIP,"Hits one target. On hit, creates a wall for the user that will absorb up to 2 hits for up to 2 turns."
+SIF_MOVE_DESCRIPTION_VINE_WHIP,"Hits one target, and creates a wall for the user that will absorb 1 hit for 1 turn."
 SIF_MOVE_WEEDKILLER_NAME,[SIF] Weedkiller
 SIF_MOVE_DESCRIPTION_WEEDKILLER,"Hits a whole team twice, removing Plant effects on hit.\nDoes not cause reactions on Plant-type targets."
 SIF_MOVE_WILD_GROWTH_NAME,[SIF] Wild Growth
 SIF_MOVE_DESCRIPTION_WILD_GROWTH,"Gives a random target Healing Leaf for 3 turns, at the end of the turn."
 SIF_MOVE_RUMINATION_NAME,[SIF] Rumination
-SIF_MOVE_DESCRIPTION_RUMINATION,"Consume one turn of Healing Leaf to heal a bit, at the end of the turn. Less effective than Healing Leaf."
+SIF_MOVE_DESCRIPTION_RUMINATION,"Consume up to 2 turns of Healing Leaf for 5% of Max HP each, at the end of the turn."
 SIF_MOVE_GROWTH_CHEMICALS_NAME,[SIF] Growth Chemicals
-SIF_MOVE_DESCRIPTION_GROWTH_CHEMICALS,"Poisons the user for 5 turns to create a Plant Wall that will absorb up to 5 hits for up to 5 turns. Fails if the user is already poisoned."
+SIF_MOVE_DESCRIPTION_GROWTH_CHEMICALS,"Poisons the user for 3 turns to create a Plant Wall that will absorb up to 5 hits for up to 5 turns.\nFails if the user is already poisoned."
 SIF_MOVE_MIRACLE_SEED_NAME,[SIF] Miracle Seed
 SIF_MOVE_DESCRIPTION_MIRACLE_SEED,"Places a seed on the target with increased priority. The seed restores 50% of the holder's Max HP at the end of their next turn, unless stolen by melee contact."
 SIF_MOVE_DANDELION_PUFF_NAME,[SIF] Dandelion Puff
@@ -22,11 +22,11 @@ SIF_MOVE_DESCRIPTION_DANDELION_PUFF,"Hits a whole team. Chance to inflict Leeche
 SIF_MOVE_HARVEST_SEASON_NAME,[SIF] Harvest Season
 SIF_MOVE_DESCRIPTION_HARVEST_SEASON,"Removes Healing Leaf from everyone on the battlefield, giving each target 1 AP per 2 turns of effect."
 SIF_MOVE_FERTILE_SOIL_NAME,[SIF] Fertile Soil
-SIF_MOVE_DESCRIPTION_FERTILE_SOIL,"The user receives more healing, but incoming Plant-type and Water-type attacks become critical.\nThe duration of Plant effects on the user will not decrease."
+SIF_MOVE_DESCRIPTION_FERTILE_SOIL,"The user receives 25% more healing, but incoming Plant-type and Water-type attacks become critical. The duration of Plant effects on the user will not decrease."
 SIF_MOVE_CROP_ROTATION_NAME,[SIF] Crop Rotation
 SIF_MOVE_DESCRIPTION_CROP_ROTATION,"Exchanges the user's Plant effects with another target, then gives the user Healing Leaf for 4 turns."
 SIF_MOVE_CROP_RAZE_NAME,[SIF] Crop Raze
-SIF_MOVE_DESCRIPTION_CROP_RAZE,"Hits one target. If target has Healing Leaf, hits the target and the user with damage based on effect duration."
+SIF_MOVE_DESCRIPTION_CROP_RAZE,"Hits one target. If target has Healing Leaf, deal bonus Fire damage proportional to effect duration, but also does 50% recoil damage to the user."
 SIF_MOVE_PECKED_CLEAN_NAME,[SIF] Pecked Clean
 SIF_MOVE_DESCRIPTION_PECKED_CLEAN,"Hits one target. If target has Plant effects, reduce its duration to heal a bit.\nDoes no damage when used on self or allies."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
