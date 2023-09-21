@@ -25,6 +25,17 @@ func _execute(battle, user, _argument, attack_params):
 				battle.queue_animate_turn_failed()
 				return 
 	
+	var status_effects = attack_params.get("status_effects", self.status_effects)
+
+	if status_effects_recipient != 1:
+		if status_effects_to_apply == 0:
+			for effect in status_effects:
+				apply_status_effect(user, effect, status_effect_amount)
+		else :
+			assert (status_effects_to_apply == 1)
+			var effect = battle.rand.choice(status_effects)
+			apply_status_effect(user, effect, status_effect_amount)
+
 	launch_attack(battle, user, targets, attack_params, Bind.new(self, "contact"))
 
 func _is_unavoidable(user, target)->bool:
@@ -50,22 +61,12 @@ func get_decoy(user)->Decoy:
 	return load("res://data/decoys/wall_" + type.id + ".tres") as Decoy
 
 func contact(battle, user, target, _damage, attack_params):
-	
-	var recipients:Array
-	if status_effects_recipient == 0:
-		recipients = [user]
-	elif status_effects_recipient == 1:
-		recipients = [target]
-	else:
-		assert (status_effects_recipient == 2)
-		recipients = [user, target]
 
-	var status_effects = attack_params.get("status_effects", self.status_effects)
-	for target in recipients:
+	if status_effects_recipient != 0:
 		if status_effects_to_apply == 0:
 			for effect in status_effects:
 				apply_status_effect(target, effect, status_effect_amount)
-		else :
+		else:
 			assert (status_effects_to_apply == 1)
 			var effect = battle.rand.choice(status_effects)
 			apply_status_effect(target, effect, status_effect_amount)

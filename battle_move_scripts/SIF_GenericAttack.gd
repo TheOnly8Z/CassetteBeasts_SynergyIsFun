@@ -1,10 +1,18 @@
 extends "res://data/battle_move_scripts/GenericAttack.gd"
 
 export (Array, Resource) var destroys_walls_of_type:Array
-export (Array, Resource) var purge_status_effects:Array
-export (String) var purge_status_effects_toast:String
 export (Array, Resource) var always_critical_against_types:Array
 export (Array, Resource) var no_chemistry_against_types:Array
+
+export (bool) var no_damage_against_allies:bool = false
+
+export (Array, Resource) var purge_status_effects:Array
+export (int, "Remove", "Drain", "Do Nothing") var purge_mode:int = 0
+export (int) var purge_amount:int = 1
+export (String) var purge_status_effects_toast:String = ""
+export (int, 0, 100) var purge_heal_percent:int = 0
+export (int) var purge_heal_absolute:int = 0
+export (int) var purge_heal_max_stacks:int = 0
 
 export (Array, Resource) var user_wall_type:Array
 export (int) var user_wall_amount:int = 0
@@ -14,6 +22,11 @@ export (Array, Resource) var target_wall_type:Array
 export (int) var target_wall_amount:int = 0
 export (int) var target_wall_chance:int = 100
 
+export (int) var return_damage_power:int = 0
+export (int) var absolute_return_damage:int = 0
+export (int, 0, 100) var percent_return_damage:int = 0
+export (String, "default", "max_hp", "melee_attack", "melee_defense", "ranged_attack", "ranged_defense", "speed") var attack_stat:String = "default"
+
 func contact(battle, user, target, damage, attack_params):
 	var type_match = _has_type_match(target, status_effect_only_for_target_types)
 	
@@ -21,9 +34,28 @@ func contact(battle, user, target, damage, attack_params):
 	var purge_status_effects = attack_params.get("purge_status_effects", self.purge_status_effects)
 	if purge_status_effects.size() > 0:
 		var num_removed:int = 0
+		var stacks_removed:int = 0
 		for effect_node in target.status.get_effects():
-			if purge_status_effects.has(effect_node.effect) and effect_node.remove():
-				num_removed += 1
+			if purge_status_effects.has(effect_node.effect):
+				var dur = 1
+				if effect_node.has_duration():
+					dur = effect_node.get_duration()
+				if purge_mode == 0 and effect_node.remove():
+					num_removed += 1
+					stacks_removed += dur
+				elif purge_mode == 1:
+					effect_node.drain(purge_amount)
+					num_removed += 1
+					stacks_removed += min(purge_amount, dur)
+				else:
+					assert (purge_mode == 2)
+					stacks_removed += dur
+
+		if purge_heal_percent + purge_heal_absolute > 0:
+			if purge_heal_max_stacks > 0:
+				stacks_removed = min(purge_heal_max_stacks, stacks_removed)
+			var hp = int(max(1, user.status.max_hp * purge_heal_percent / 100 + purge_heal_absolute) * stacks_removed)
+			user.get_controller().heal(hp)
 
 		if purge_status_effects_toast != null and num_removed > 0:
 			var toast = battle.create_toast()
@@ -50,17 +82,7 @@ func contact(battle, user, target, damage, attack_params):
 		apply_status_effect(target, shield, target_wall_amount)
 
 func _pre_contact(battle, user, target, damage):
-	# Apply wall to user. Not contact dependent, triggers as long as move doesn't miss
-	if user_wall_amount > 0 and battle.rand.rand_int(100) < user_wall_chance:
-		var types = get_types(user)
-		var type = preload("res://data/elemental_types/beast.tres")
-		if user_wall_type.size() > 0:
-			type = user_wall_type[0]
-		elif types.size() > 0:
-			type = types[0]
-		var shield = WallStatus.new()
-		shield.set_decoy(load("res://data/decoys/wall_" + type.id + ".tres"))
-		apply_status_effect(user, shield, user_wall_amount)
+	pass
 
 func _is_critical(battle, user, target, damage:Damage)->bool:
 	if ._is_critical(battle, user, target, damage):
@@ -81,6 +103,18 @@ func launch_attack(battle, user, targets:Array, attack_params = {}, on_contact =
 		return 
 	
 	affect_weather(battle)
+	
+	# Apply wall to user. Always triggers on a miss, but doesn't trigger per target
+	if user_wall_amount > 0 and battle.rand.rand_int(100) < user_wall_chance:
+		var types = get_types(user)
+		var type = preload("res://data/elemental_types/beast.tres")
+		if user_wall_type.size() > 0:
+			type = user_wall_type[0]
+		elif types.size() > 0:
+			type = types[0]
+		var shield = WallStatus.new()
+		shield.set_decoy(load("res://data/decoys/wall_" + type.id + ".tres"))
+		apply_status_effect(user, shield, user_wall_amount)
 	
 	for target in targets:
 		var damage = create_damage(battle, user, target, attack_params)
@@ -118,6 +152,11 @@ func launch_attack(battle, user, targets:Array, attack_params = {}, on_contact =
 						else:
 							damage.destroys_walls = true
 				
+				# No damage against allies (also ignores walls)
+				if no_damage_against_allies and user.team == target.team:
+					damage.damage = 0
+					damage.ignores_walls = true
+				
 				# Make contact and do damage stuff normally.
 				if not battle.events.notify("attack_contact_starting", notify_args):
 					if damage.damage > 0:
@@ -148,3 +187,14 @@ func _has_type_match(target, types:Array)->bool:
 				return true
 		return false
 	return true
+
+func _get_user_attack_stat(user, physicality)->int:
+	if attack_stat == "default":
+		return ._get_user_attack_stat(user, physicality)
+	return user.status.get(attack_stat)
+
+func _get_damage_to_user(user)->int:
+	var level = user.status.level
+	var attack = user.status.get_attack_variant(physicality)
+	var defense = user.status.get_defense_variant(physicality)
+	return BattleFormulas.get_damage(user.battle.rand, return_damage_power, level, attack, defense, [], []) + absolute_return_damage + percent_return_damage * user.status.max_hp / 100

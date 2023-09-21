@@ -7,20 +7,20 @@
 [ext_resource path="res://data/sticker_attribute_profiles/attack.tres" type="Resource" id=5]
 [ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=6]
 [ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_GenericAttack.gd" type="Script" id=7]
-[ext_resource path="res://data/elemental_types/metal.tres" type="Resource" id=8]
+[ext_resource path="res://data/elemental_types/air.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 7 )
-name = "SIF_MOVE_SHEAR_FORCE_NAME"
+name = "SIF_MOVE_PECKED_CLEAN_NAME"
 category_name = "MOVE_CATEGORY_MELEE"
-description = "SIF_MOVE_DESCRIPTION_SHEAR_FORCE"
+description = "SIF_MOVE_DESCRIPTION_PECKED_CLEAN"
 title_override = ""
 tags = [ "sif", "any", "offense" ]
 priority = 0
-cost = 3
+cost = 1
 is_debug = false
 is_passive_only = false
-power = 40
+power = 30
 physicality = 0
 target_type = 1
 default_target = 3
@@ -56,13 +56,23 @@ target_status_only_if_not_had_turn = false
 destroys_walls = false
 require_target_tag = ""
 destroys_walls_of_type = [ ExtResource( 3 ) ]
-purge_status_effects = [ ExtResource( 2 ), ExtResource( 6 ) ]
-purge_status_effects_toast = "SIF_BATTLE_TOAST_WEEDS_REMOVED"
 always_critical_against_types = [  ]
 no_chemistry_against_types = [  ]
+no_damage_against_allies = false
+purge_status_effects = [ ExtResource( 2 ), ExtResource( 6 ) ]
+purge_mode = 0
+purge_amount = 1
+purge_status_effects_toast = "SIF_BATTLE_TOAST_WEEDS_REMOVED"
+purge_heal_percent = 0
+purge_heal_absolute = 0
+purge_heal_max_stacks = 0
 user_wall_type = [  ]
 user_wall_amount = 0
 user_wall_chance = 100
 target_wall_type = [  ]
 target_wall_amount = 0
 target_wall_chance = 100
+return_damage_power = 0
+absolute_return_damage = 0
+percent_return_damage = 0
+attack_stat = "default"

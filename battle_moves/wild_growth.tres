@@ -45,5 +45,5 @@ passive_effect_target_team = 0
 passive_effect_target_self = true
 passive_effects = [ ExtResource( 2 ) ]
 passive_effects_to_apply = 0
-passive_effect_amount = 2
+passive_effect_amount = 3
 passive_effect_chance = 100

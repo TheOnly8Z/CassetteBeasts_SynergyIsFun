@@ -25,10 +25,16 @@ SIF_MOVE_FERTILE_SOIL_NAME,[SIF] Fertile Soil
 SIF_MOVE_DESCRIPTION_FERTILE_SOIL,"The user receives more healing, but incoming Plant-type and Water-type attacks become critical.\nThe duration of Plant effects on the user will not decrease."
 SIF_MOVE_CROP_ROTATION_NAME,[SIF] Crop Rotation
 SIF_MOVE_DESCRIPTION_CROP_ROTATION,"Exchanges the user's Plant effects with another target, then gives the user Healing Leaf for 4 turns."
+SIF_MOVE_CROP_RAZE_NAME,[SIF] Crop Raze
+SIF_MOVE_DESCRIPTION_CROP_RAZE,"Hits one target. If target has Healing Leaf, hits the target and the user with damage based on effect duration."
+SIF_MOVE_PECKED_CLEAN_NAME,[SIF] Pecked Clean
+SIF_MOVE_DESCRIPTION_PECKED_CLEAN,"Hits one target. If target has Plant effects, reduce its duration to heal a bit.\nDoes no damage when used on self or allies."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
 SIF_BATTLE_TOAST_WEEDS_GRAZED,Weeds Grazed
 SIF_BATTLE_TOAST_HARVEST_SEASON,Harvest Season
 SIF_BATTLE_TOAST_CROP_ROTATION,Crops Rotated
+SIF_BATTLE_TOAST_CROP_RAZE,Razed
+SIF_BATTLE_TOAST_PECKED_CLEAN,Pecked
 STATUS_MIRACLE_SEED_TOAST_BEFORE_HEAL,Seed Bloom
 STATUS_MIRACLE_SEED_NAME,Miracle Seed
 STATUS_MIRACLE_SEED_DESCRIPTION,"A character with Miracle Seed will heal 50% of their Max HP at the end of their next turn if it's not stolen by a melee attack."
