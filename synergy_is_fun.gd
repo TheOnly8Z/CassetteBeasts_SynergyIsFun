@@ -7,12 +7,6 @@ const MOD_STRINGS:Array = [
 ]
 
 const MODUTILS: Dictionary = {
-	"class_patch": [
-		{
-			"patch": "res://mods/synergy_is_fun/status_effect_scripts/Patch_WallStatus.gd",
-			"target": "res://data/status_effect_scripts/WallStatus.gd",
-		},
-	],
 }
 
 func _init():
@@ -28,6 +22,16 @@ func _init():
 	})
 
 	SceneManager.preloader.connect("singleton_setup_completed", self, "_init_stickers")
+
+func init_content():
+	DLC.mods_by_id.cat_modutils.callbacks.connect_scene_ready("res://cutscenes/merchants/TownHall_VendingMachine_InteractionBehavior.tscn", self, "_on_VendingMachine1_ready")
+
+func _on_VendingMachine1_ready(scene: Node) -> void:
+	var exchange_menu = scene.get_child(0).get_child(0)
+	var sticker_packs = Datatables.load("res://mods/synergy_is_fun/exchanges/booster_packs/").table
+	for pack in sticker_packs:
+			exchange_menu.exchanges.push_back(sticker_packs[pack])
+			print("[SIF] Added Sticker Pack: " + pack)
 
 func _init_stickers():
 	if sif_loaded:

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/BoosterPackLootTable.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+sticker_tags = [ "sif_set1" ]
+num_stickers = 3
+num_rarity_upgrades = 3

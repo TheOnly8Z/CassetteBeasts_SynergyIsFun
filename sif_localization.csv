@@ -38,3 +38,5 @@ SIF_BATTLE_TOAST_PECKED_CLEAN,Pecked
 STATUS_MIRACLE_SEED_TOAST_BEFORE_HEAL,Seed Bloom
 STATUS_MIRACLE_SEED_NAME,Miracle Seed
 STATUS_MIRACLE_SEED_DESCRIPTION,"A character with Miracle Seed will heal 50% of their Max HP at the end of their next turn if it's not stolen by a melee attack."
+BOOSTER_PACK_SIF_SET1_NAME,"[SIF] 'Terra's Bounty' Sticker Pack"
+BOOSTER_PACK_SIF_SET1_DESCRIPTION,"A themed booster pack of 3 stickers, all guaranteed to be uncommon or rare!"
