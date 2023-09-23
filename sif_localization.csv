@@ -28,7 +28,7 @@ SIF_MOVE_DESCRIPTION_CROP_ROTATION,"Exchanges the user's Plant effects with anot
 SIF_MOVE_CROP_RAZE_NAME,[SIF] Crop Raze
 SIF_MOVE_DESCRIPTION_CROP_RAZE,"Hits one target. If target has Healing Leaf, deal bonus Fire damage proportional to effect duration, but also does 50% recoil damage to the user."
 SIF_MOVE_PECKED_CLEAN_NAME,[SIF] Pecked Clean
-SIF_MOVE_DESCRIPTION_PECKED_CLEAN,"Hits one target. If target has Plant effects, reduce its duration to heal a bit.\nDoes no damage when used on self or allies."
+SIF_MOVE_DESCRIPTION_PECKED_CLEAN,"Hits one target twice. If target has Plant effects, reduce its duration to heal a bit.\nDoes no damage when used on self or allies."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
 SIF_BATTLE_TOAST_WEEDS_GRAZED,Weeds Grazed
 SIF_BATTLE_TOAST_HARVEST_SEASON,Harvest Season

@@ -11,11 +11,11 @@
 
 [resource]
 script = ExtResource( 7 )
-name = "SIF_MOVE_PECKED_CLEAN_NAME"
+name = "SIF_MOVE_SHEAR_FORCE_NAME"
 category_name = "MOVE_CATEGORY_MELEE"
-description = "SIF_MOVE_DESCRIPTION_PECKED_CLEAN"
+description = "SIF_MOVE_DESCRIPTION_SHEAR_FORCE"
 title_override = ""
-tags = [ "sif", "any", "offense" ]
+tags = [ "sif", "sif_set1", "hands", "sword" ]
 priority = 0
 cost = 1
 is_debug = false
