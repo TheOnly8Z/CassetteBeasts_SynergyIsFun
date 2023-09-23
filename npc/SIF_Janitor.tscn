@@ -1,0 +1,272 @@
+[gd_scene load_steps=50 format=2]
+
+[ext_resource path="res://data/battle_moves/boil.tres" type="Resource" id=1]
+[ext_resource path="res://data/battle_moves/bite.tres" type="Resource" id=2]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/crop_raze.tres" type="Resource" id=3]
+[ext_resource path="res://mods/synergy_is_fun/ai/SIF_PottedPlantAI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://data/battle_moves/blood_donation.tres" type="Resource" id=5]
+[ext_resource path="res://data/battle_moves/status_resistance.tres" type="Resource" id=6]
+[ext_resource path="res://data/character_sfx/male_npc_1_sfx.tres" type="Resource" id=7]
+[ext_resource path="res://data/monster_forms/hedgeherne.tres" type="Resource" id=8]
+[ext_resource path="res://world/npc/HumanNPC.tscn" type="PackedScene" id=9]
+[ext_resource path="res://nodes/encounter_config/EncounterConfig.gd" type="Script" id=10]
+[ext_resource path="res://nodes/encounter_config/CharacterConfig.gd" type="Script" id=11]
+[ext_resource path="res://nodes/encounter_config/TapeConfig.gd" type="Script" id=12]
+[ext_resource path="res://nodes/actions/BattleAction.gd" type="Script" id=13]
+[ext_resource path="res://data/battle_moves/beast_wall.tres" type="Resource" id=14]
+[ext_resource path="res://mods/synergy_is_fun/ai/SIF_JanitorAI.tscn" type="PackedScene" id=15]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/weedkiller.tres" type="Resource" id=16]
+[ext_resource path="res://data/battle_moves/leech.tres" type="Resource" id=17]
+[ext_resource path="res://data/battle_moves/doc_leaf.tres" type="Resource" id=18]
+[ext_resource path="res://data/battle_moves/throw.tres" type="Resource" id=19]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/rumination.tres" type="Resource" id=20]
+[ext_resource path="res://data/monster_forms/draculeaf.tres" type="Resource" id=21]
+[ext_resource path="res://data/battle_moves/custom_starter.tres" type="Resource" id=22]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/fertile_soil.tres" type="Resource" id=23]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/vine_whip.tres" type="Resource" id=24]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/pecked_clean.tres" type="Resource" id=25]
+[ext_resource path="res://addons/misc_utils/actions/values/GetPawn.gd" type="Script" id=26]
+[ext_resource path="res://nodes/actions/FaceTowardsAction.gd" type="Script" id=27]
+[ext_resource path="res://data/battle_moves/echolocation.tres" type="Resource" id=28]
+[ext_resource path="res://data/battle_moves/burning_passion.tres" type="Resource" id=29]
+[ext_resource path="res://menus/boss_title/TitleBanner.tscn" type="PackedScene" id=30]
+[ext_resource path="res://menus/boss_title/TitleBannerConfig.gd" type="Script" id=31]
+[ext_resource path="res://nodes/actions/values/GetPlayer.gd" type="Script" id=32]
+[ext_resource path="res://nodes/actions/Cutscene.gd" type="Script" id=33]
+[ext_resource path="res://music/release/battle_captain_instr.ogg" type="AudioStream" id=34]
+[ext_resource path="res://music/release/battle_captain_vox.ogg" type="AudioStream" id=35]
+[ext_resource path="res://nodes/actions/MessageDialogAction.gd" type="Script" id=36]
+[ext_resource path="res://data/character_sfx/male_npc_2_sfx.tres" type="Resource" id=37]
+[ext_resource path="res://data/battle_moves/ap_boost.tres" type="Resource" id=38]
+[ext_resource path="res://data/battle_moves/coal_story.tres" type="Resource" id=39]
+[ext_resource path="res://nodes/actions/IsUndefeatedAction.gd" type="Script" id=40]
+[ext_resource path="res://addons/misc_utils/actions/decorators/Succeeder.gd" type="Script" id=41]
+[ext_resource path="res://mods/synergy_is_fun/npc/SIF_JanitorBehavior.gd" type="Script" id=42]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/wild_growth.tres" type="Resource" id=43]
+[ext_resource path="res://data/monster_forms/nevermort.tres" type="Resource" id=44]
+[ext_resource path="res://addons/misc_utils/actions/composites/Sequence.gd" type="Script" id=45]
+[ext_resource path="res://data/monster_forms/burnace.tres" type="Resource" id=46]
+[ext_resource path="res://mods/synergy_is_fun/sprites/janitor.png" type="Texture" id=47]
+[ext_resource path="res://addons/misc_utils/actions/composites/Selector.gd" type="Script" id=48]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 31 )
+banner_scene = ExtResource( 30 )
+title = "SIF_JANITOR_NAME"
+subtitle = "SIF_JANITOR_SUBTITLE"
+title_subs = {
+}
+tutorial = ""
+title_is_monster_name = false
+
+[node name="Janitor" instance=ExtResource( 9 )]
+npc_name = "SIF_JANITOR_NAME_SHORT"
+pronouns = 0
+sprite_colors = {
+"body_color_1": 2,
+"body_color_2": 5,
+"eye_color": 6,
+"face_accessory_color": -1,
+"favorite_color": 5,
+"hair_accessory_color": 3,
+"hair_color": 3,
+"legs_color": 6,
+"shoe_color": 12,
+"skin_color": -1
+}
+sprite_part_names = {
+"arms": "jacket2",
+"body": "jacket2",
+"hair": "short",
+"head": "mask1",
+"legs": "generic",
+"wings": "generic"
+}
+human_colors/body_color_1 = 2
+human_colors/body_color_2 = 5
+human_colors/eye_color = 6
+human_colors/favorite_color = 5
+human_colors/hair_accessory_color = 3
+human_colors/hair_color = 3
+human_colors/legs_color = 6
+human_colors/shoe_color = 12
+
+[node name="HumanSprite" parent="Sprite" index="0"]
+part_names = {
+"arms": "jacket2",
+"body": "jacket2",
+"hair": "short",
+"head": "mask1",
+"legs": "generic",
+"wings": "generic"
+}
+colors = {
+"body_color_1": 2,
+"body_color_2": 5,
+"eye_color": 6,
+"face_accessory_color": -1,
+"favorite_color": 5,
+"hair_accessory_color": 3,
+"hair_color": 3,
+"legs_color": 6,
+"shoe_color": 12,
+"skin_color": -1
+}
+
+[node name="EncounterConfig" type="Node" parent="." index="9"]
+script = ExtResource( 10 )
+unique_id = "sif_janitor"
+music_override = ExtResource( 34 )
+music_vox_override = ExtResource( 35 )
+can_flee = false
+transition = 3
+title_banner = SubResource( 1 )
+
+[node name="CharacterConfig" type="Node" parent="EncounterConfig" index="0"]
+script = ExtResource( 11 )
+character_name = "SIF_JANITOR_NAME_SHORT"
+pronouns = 0
+level_override = 40
+character_sfx = ExtResource( 7 )
+character_kind = 1
+human_colors = {
+"body_color_1": -1,
+"body_color_2": -1,
+"eye_color": -1,
+"face_accessory_color": -1,
+"favorite_color": -1,
+"hair_accessory_color": -1,
+"hair_color": -1,
+"legs_color": -1,
+"shoe_color": -1,
+"skin_color": -1
+}
+human_part_names = {
+"arms": "",
+"body": "",
+"hair": "",
+"head": "",
+"legs": ""
+}
+copy_human_sprite = NodePath("../..")
+ai = ExtResource( 15 )
+human_colors/body_color_1 = -1
+human_colors/body_color_2 = -1
+human_colors/eye_color = -1
+human_colors/face_accessory_color = -1
+human_colors/favorite_color = -1
+human_colors/hair_accessory_color = -1
+human_colors/hair_color = -1
+human_colors/legs_color = -1
+human_colors/shoe_color = -1
+human_colors/skin_color = -1
+
+[node name="TapeConfig" type="Node" parent="EncounterConfig/CharacterConfig" index="0"]
+script = ExtResource( 12 )
+form = ExtResource( 46 )
+moves_override = [ ExtResource( 39 ), ExtResource( 16 ), ExtResource( 38 ), ExtResource( 28 ) ]
+
+[node name="TapeConfig2" type="Node" parent="EncounterConfig/CharacterConfig" index="1"]
+script = ExtResource( 12 )
+form = ExtResource( 21 )
+moves_override = [ ExtResource( 22 ), ExtResource( 18 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 2 ), ExtResource( 43 ) ]
+
+[node name="Sidekick" type="Node" parent="EncounterConfig" index="1"]
+script = ExtResource( 11 )
+character_name = "SIF_POTTED_PLANT_NAME_SHORT"
+pronouns = 0
+level_override = 40
+character_sfx = ExtResource( 37 )
+character_kind = 1
+human_colors = {
+"body_color_1": 5,
+"body_color_2": 14,
+"eye_color": 16,
+"face_accessory_color": -1,
+"favorite_color": -1,
+"hair_accessory_color": -1,
+"hair_color": 15,
+"legs_color": 3,
+"shoe_color": -1,
+"skin_color": 20
+}
+human_part_names = {
+"arms": "jacket",
+"body": "jacket",
+"hair": "bald",
+"head": "beard1",
+"legs": ""
+}
+ai = ExtResource( 4 )
+human_colors/body_color_1 = 5
+human_colors/body_color_2 = 14
+human_colors/eye_color = 16
+human_colors/face_accessory_color = -1
+human_colors/favorite_color = -1
+human_colors/hair_accessory_color = -1
+human_colors/hair_color = 15
+human_colors/legs_color = 3
+human_colors/shoe_color = -1
+human_colors/skin_color = 20
+
+[node name="TapeConfig" type="Node" parent="EncounterConfig/Sidekick" index="0"]
+script = ExtResource( 12 )
+form = ExtResource( 44 )
+moves_override = [ ExtResource( 28 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 14 ) ]
+
+[node name="TapeConfig2" type="Node" parent="EncounterConfig/Sidekick" index="1"]
+script = ExtResource( 12 )
+form = ExtResource( 8 )
+moves_override = [ ExtResource( 22 ), ExtResource( 17 ), ExtResource( 1 ), ExtResource( 29 ), ExtResource( 43 ), ExtResource( 3 ), ExtResource( 24 ), ExtResource( 6 ) ]
+
+[node name="InteractionBehavior" type="Spatial" parent="." index="10"]
+script = ExtResource( 42 )
+__meta__ = {
+"action_tree": true
+}
+dialogue = [ "SIF_JANITOR_INTRO_1", "SIF_JANITOR_INTRO_2" ]
+defeat_dialogue = [ "SIF_JANITOR_OUTRO" ]
+
+[node name="Succeeder" type="Node" parent="InteractionBehavior" index="0"]
+script = ExtResource( 41 )
+
+[node name="IsUndefeatedAction" type="Node" parent="InteractionBehavior/Succeeder" index="0"]
+script = ExtResource( 40 )
+
+[node name="FaceTowardsAction" type="Node" parent="InteractionBehavior/Succeeder/IsUndefeatedAction" index="0"]
+script = ExtResource( 27 )
+__meta__ = {
+"action_tree": true
+}
+
+[node name="GetPawn" type="Node" parent="InteractionBehavior/Succeeder/IsUndefeatedAction/FaceTowardsAction" index="0"]
+script = ExtResource( 26 )
+
+[node name="GetPlayer" type="Node" parent="InteractionBehavior/Succeeder/IsUndefeatedAction/FaceTowardsAction" index="1"]
+script = ExtResource( 32 )
+
+[node name="Cutscene" type="Node" parent="InteractionBehavior" index="1"]
+script = ExtResource( 33 )
+
+[node name="Selector" type="Node" parent="InteractionBehavior/Cutscene" index="0"]
+script = ExtResource( 48 )
+
+[node name="Sequence" type="Node" parent="InteractionBehavior/Cutscene/Selector" index="0"]
+script = ExtResource( 45 )
+
+[node name="MainDialogue" type="Node" parent="InteractionBehavior/Cutscene/Selector/Sequence" index="0"]
+script = ExtResource( 36 )
+portrait = ExtResource( 47 )
+title = "{pawn}"
+
+[node name="BattleAction" type="Node" parent="InteractionBehavior/Cutscene/Selector/Sequence" index="1"]
+script = ExtResource( 13 )
+disable_fleeing = true
+
+[node name="Sequence2" type="Node" parent="InteractionBehavior/Cutscene/Selector" index="1"]
+script = ExtResource( 45 )
+
+[node name="DefeatDialogue" type="Node" parent="InteractionBehavior/Cutscene/Selector/Sequence2" index="0"]
+script = ExtResource( 36 )
+portrait = ExtResource( 47 )
+title = "{pawn}"

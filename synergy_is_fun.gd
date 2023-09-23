@@ -7,6 +7,14 @@ const MOD_STRINGS:Array = [
 ]
 
 const MODUTILS: Dictionary = {
+	"world": {
+		"modclub_population": [
+			{
+				"scene": "res://mods/synergy_is_fun/npc/SIF_Janitor.tscn",
+				"mode": "standing",
+			},
+		],
+	},
 }
 
 func _init():
@@ -24,6 +32,11 @@ func _init():
 	SceneManager.preloader.connect("singleton_setup_completed", self, "_init_stickers")
 
 func init_content():
+	assert(DLC.has_mod("cat_modutils", 5))
+	if not DLC.has_mod("cat_modutils", 5):
+		OS.alert("Required mod dependency \"Mod Utils\" is missing or needs to be updated.", "Missing dependency!")
+		return
+
 	DLC.mods_by_id.cat_modutils.callbacks.connect_scene_ready("res://cutscenes/merchants/TownHall_VendingMachine_InteractionBehavior.tscn", self, "_on_VendingMachine1_ready")
 
 func _on_VendingMachine1_ready(scene: Node) -> void:

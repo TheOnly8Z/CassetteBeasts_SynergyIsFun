@@ -1,0 +1,161 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://mods/synergy_is_fun/ai/SIF_JanitorAI.gd" type="Script" id=1]
+[ext_resource path="res://data/status_effects/multitarget.tres" type="Resource" id=2]
+[ext_resource path="res://data/status_effects/ap_boost.tres" type="Resource" id=3]
+[ext_resource path="res://data/battle_moves/echolocation.tres" type="Resource" id=4]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/graze.tres" type="Resource" id=5]
+[ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=6]
+[ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=7]
+[ext_resource path="res://mods/synergy_is_fun/ai/SIF_WeightedAIMovePreference.gd" type="Script" id=8]
+[ext_resource path="res://data/battle_moves/ap_boost.tres" type="Resource" id=9]
+[ext_resource path="res://data/battle_moves/nurse.tres" type="Resource" id=10]
+[ext_resource path="res://data/status_effects/ap_drain.tres" type="Resource" id=11]
+[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=12]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/weedkiller.tres" type="Resource" id=14]
+[ext_resource path="res://mods/synergy_is_fun/ai/SIF_PurgeStatusMovePreference.gd" type="Script" id=25]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/overgrowth.tres" type="Resource" id=27]
+[ext_resource path="res://data/sticker_attributes/multitarget.tres" type="Resource" id=28]
+[ext_resource path="res://data/battle_moves/blood_donation.tres" type="Resource" id=29]
+[ext_resource path="res://data/battle_moves/throw.tres" type="Resource" id=30]
+
+[node name="JanitorAI" type="Node"]
+script = ExtResource( 1 )
+cooldown_wall = 0.0
+cooldown_buff = 0.0
+cooldown_debuff = 0.0
+cooldown_misc = 0.0
+weight_wall = 3.0
+weight_offensive_coating = 0.0
+weight_self_damage = 0.0
+weight_heal = 8.0
+multiplier_duplicate_status = 0.5
+
+[node name="WeightedAIMovePreference" type="Node" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": "Stack Plant Wall with Overgrowth"
+}
+move = ExtResource( 27 )
+score = 10.0
+only_if_user_has_wall_of_type = ExtResource( 12 )
+
+[node name="WeightedAIMovePreference6" type="Node" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": "Make Plant Wall with Overgrowth"
+}
+move = ExtResource( 27 )
+score = 40.0
+only_if_user_lacks_status_effect = [ ExtResource( 28 ) ]
+only_if_user_team_has_no_wall = true
+
+[node name="WeightedAIMovePreference2" type="Node" parent="."]
+script = ExtResource( 25 )
+__meta__ = {
+"_editor_description_": "Cure Leeched on self or ally"
+}
+move = ExtResource( 5 )
+only_if_target_is_self_or_ally = true
+only_if_target_has_status_effect = [ ExtResource( 7 ) ]
+score = 5.0
+score_per_stack = 2.0
+score_health_factor = 0.75
+
+[node name="WeightedAIMovePreference3" type="Node" parent="."]
+script = ExtResource( 25 )
+__meta__ = {
+"_editor_description_": "Remove Healing Leaf from enemy"
+}
+move = ExtResource( 5 )
+only_if_target_is_enemy = true
+only_if_target_has_status_effect = [ ExtResource( 6 ) ]
+stack_weight_debuff = 0.0
+score = 7.0
+score_per_stack = 3.0
+score_health_factor = 0.25
+
+[node name="WeightedAIMovePreference5" type="Node" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": "Kill Healing Leaf with Weedkiller"
+}
+move = ExtResource( 14 )
+only_if_target_is_enemy = true
+score = 3.0
+score_mode = 1
+only_if_target_has_status_effect = [ ExtResource( 6 ) ]
+
+[node name="WeightedAIMovePreference12" type="Node" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": "Apply AP Boost if not up"
+}
+move = ExtResource( 9 )
+only_if_target_is_self_or_ally = true
+score = 4.0
+score_mode = 1
+only_if_user_has_status_effect = [ ExtResource( 2 ) ]
+only_if_user_lacks_status_effect = [ ExtResource( 3 ) ]
+
+[node name="WeightedAIMovePreference18" type="Node" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": "Cancel out AP Drain"
+}
+move = ExtResource( 9 )
+only_if_target_is_self_or_ally = true
+score = 3.0
+score_mode = 1
+only_if_target_has_status_effect = [ ExtResource( 11 ) ]
+
+[node name="WeightedAIMovePreference13" type="Node" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": "Apply Echolocation if not up"
+}
+move = ExtResource( 4 )
+score = 6.0
+score_mode = 1
+only_if_user_lacks_status_effect = [ ExtResource( 2 ) ]
+
+[node name="WeightedAIMovePreference14" type="Node" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": "Use blood donation please"
+}
+move = ExtResource( 29 )
+only_if_target_is_ally = true
+only_if_target_hp_percent_below = 50
+score = 15.0
+score_mode = 1
+
+[node name="WeightedAIMovePreference17" type="Node" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": "nurse self"
+}
+move = ExtResource( 10 )
+only_if_target_is_self = true
+only_if_target_hp_percent_below = 55
+score = 25.0
+score_mode = 1
+
+[node name="WeightedAIMovePreference15" type="Node" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": "throw"
+}
+move = ExtResource( 30 )
+score = 8.0
+score_mode = 1
+only_if_user_has_status_effect = [ ExtResource( 2 ) ]
+
+[node name="WeightedAIMovePreference16" type="Node" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": "throw"
+}
+move = ExtResource( 30 )
+score = 0.0
+only_if_user_wall_duration_below = 2

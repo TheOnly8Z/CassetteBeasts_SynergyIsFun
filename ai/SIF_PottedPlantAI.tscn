@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://mods/synergy_is_fun/ai/SIF_PottedPlantAI.gd" type="Script" id=1]
+[ext_resource path="res://data/status_effects/multitarget.tres" type="Resource" id=2]
+[ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=3]
+[ext_resource path="res://battle/ai/WeightedAIMovePreference.gd" type="Script" id=4]
+[ext_resource path="res://data/battle_moves/echolocation.tres" type="Resource" id=5]
+[ext_resource path="res://mods/synergy_is_fun/ai/SIF_WeightedAIMovePreference.gd" type="Script" id=6]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/crop_raze.tres" type="Resource" id=8]
+[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=9]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/overgrowth.tres" type="Resource" id=10]
+[ext_resource path="res://data/elemental_types/beast.tres" type="Resource" id=11]
+[ext_resource path="res://data/battle_moves/beast_wall.tres" type="Resource" id=12]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/vine_whip.tres" type="Resource" id=15]
+
+[node name="PottedPlantAI" type="Node"]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+cooldown_wall = 0.0
+cooldown_coating = 1.0
+cooldown_buff = 0.0
+cooldown_debuff = 0.0
+cooldown_misc = 0.0
+weight_wall = 5.0
+weight_debuff = 3.0
+weight_attack = 1.0
+weight_self_damage = 0.0
+weight_heal = 3.0
+multiplier_duplicate_status = 0.5
+multiplier_weak_wall = 1.0
+
+[node name="WeightedAIMovePreference" type="Node" parent="."]
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": "If we do not have multitarget, prioritize echolocation"
+}
+move = ExtResource( 5 )
+only_if_target_is_self = true
+only_if_target_lacks_status_tag = [ "multitarget" ]
+score = 10.0
+score_mode = 1
+
+[node name="WeightedAIMovePreference2" type="Node" parent="."]
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": "If we have multitarget but no wall, prioritize wall"
+}
+move = ExtResource( 12 )
+score = 5.0
+score_mode = 1
+only_if_user_has_status_effect = [ ExtResource( 2 ) ]
+only_if_user_team_has_no_wall = true
+
+[node name="WeightedAIMovePreference8" type="Node" parent="."]
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": "Prefer having Air Wall be at > 3 turns"
+}
+move = ExtResource( 12 )
+score = 3.0
+score_mode = 1
+only_if_user_has_status_effect = [ ExtResource( 2 ) ]
+only_if_user_wall_duration_below = 4
+only_if_target_has_wall_of_type = [ ExtResource( 11 ) ]
+
+[node name="WeightedAIMovePreference3" type="Node" parent="."]
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": "Use Crop Raze on targets with Healing Leaf"
+}
+move = ExtResource( 8 )
+score = 10.0
+score_mode = 1
+only_if_target_has_status_effect = [ ExtResource( 3 ) ]
+
+[node name="WeightedAIMovePreference6" type="Node" parent="."]
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": "Stack Plant wall with Overgrowth if low"
+}
+move = ExtResource( 10 )
+score = 25.0
+only_if_user_wall_duration_below = 4
+only_if_user_has_wall_of_type = ExtResource( 9 )
+
+[node name="WeightedAIMovePreference7" type="Node" parent="."]
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": "Make Plant Wall with Overgrowth"
+}
+move = ExtResource( 10 )
+score = 50.0
+only_if_user_has_no_wall = true
+
+[node name="WeightedAIMovePreference13" type="Node" parent="."]
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": "Apply Echolocation if not up"
+}
+move = ExtResource( 5 )
+score = 8.0
+score_mode = 1
+only_if_user_lacks_status_effect = [ ExtResource( 2 ) ]
+
+[node name="WeightedAIMovePreference12" type="Node" parent="."]
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": "Vine whip when no wall"
+}
+move = ExtResource( 15 )
+score = 3.0
+score_mode = 1
+only_if_user_has_no_wall = true
