@@ -29,14 +29,31 @@ SIF_MOVE_CROP_RAZE_NAME,[SIF] Crop Raze
 SIF_MOVE_DESCRIPTION_CROP_RAZE,"Hits one target. If target has Healing Leaf, deal bonus Fire damage proportional to effect duration, but also does 50% recoil damage to the user."
 SIF_MOVE_PECKED_CLEAN_NAME,[SIF] Pecked Clean
 SIF_MOVE_DESCRIPTION_PECKED_CLEAN,"Hits one target twice. If target has Plant effects, reduce its duration to heal a bit.\nDoes no damage when used on self or allies."
+SIF_MOVE_CONTROLLED_BURN_NAME,[SIF] Controlled Burn
+SIF_MOVE_DESCRIPTION_CONTROLLED_BURN,"Removes Healing Leaf from the user and hits one target. Damage is proportional to duration of the effect."
+SIF_MOVE_CHILLING_GUST_NAME,[SIF] Chilling Gust
+SIF_MOVE_DESCRIPTION_CHILLING_GUST,"Hits a whole team, ignoring walls and removing Plant effects on hit.\nBecomes an Air-type attack when equipped to an Ice-type tape."
+SIF_MOVE_GREENHOUSE_NAME,[SIF] Greenhouse
+SIF_MOVE_DESCRIPTION_GREENHOUSE,"Sacrifice 20% of HP to create a wall that will absorb up to 3 hits for up to 3 turns. This wall will also increase all healing received by the owner by 50%."
+SIF_MOVE_WHAT_WE_SOW_NAME,[SIF] What We Sow
+SIF_MOVE_DESCRIPTION_WHAT_WE_SOW,"Hits everyone on the battlefield except the user. Targets are hit by an additional 20 Water-type damage. Chance to apply Healing Leaf or Leeched on targets and the user."
+SIF_MOVE_WHAT_WE_REAP_NAME,[SIF] What We Reap
+SIF_MOVE_DESCRIPTION_WHAT_WE_REAP,"Hits one target. If used after What We Sow, the move will land critical hits on targets with Plant effects."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
-SIF_BATTLE_TOAST_WEEDS_GRAZED,Weeds Grazed
-SIF_BATTLE_TOAST_HARVEST_SEASON,Harvest Season
-SIF_BATTLE_TOAST_CROP_ROTATION,Crops Rotated
+SIF_BATTLE_TOAST_WEEDS_GRAZED,Grazed
+SIF_BATTLE_TOAST_HARVEST_SEASON,Harvested
+SIF_BATTLE_TOAST_CROP_ROTATION,Crop Rotation
 SIF_BATTLE_TOAST_CROP_RAZE,Razed
 SIF_BATTLE_TOAST_PECKED_CLEAN,Pecked
+SIF_BATTLE_TOAST_PECKED_CHILLING_GUST,Chilled
 STATUS_MIRACLE_SEED_TOAST_BEFORE_HEAL,Seed Bloom
 STATUS_MIRACLE_SEED_NAME,Miracle Seed
 STATUS_MIRACLE_SEED_DESCRIPTION,"A character with Miracle Seed will heal 50% of their Max HP at the end of their next turn if it's not stolen by a melee attack."
+STATUS_GREENHOUSE_WALL_NAME,Greenhouse Wall
+STATUS_GREENHOUSE_WALL_DESCRIPTION,"Walls absorb a certain number of incoming hits. Type-advantaged attacks immediately break walls. In addition to standard Wall behavior, Greenhouse Wall increases healing received by 50% for the owner."
 BOOSTER_PACK_SIF_SET1_NAME,"[SIF] 'Terra's Bounty' Sticker Pack"
 BOOSTER_PACK_SIF_SET1_DESCRIPTION,"A themed booster pack of 3 stickers, all guaranteed to be uncommon or rare!"
+SIF_JANITOR_NAME_SHORT,"The Janitor"
+SIF_POTTED_PLANT_NAME_SHORT,"The Potted Plant"
+SIF_JANITOR_NAME,"The Janitor"
+SIF_JANITOR_SUBTITLE,"... and the Potted Plant"

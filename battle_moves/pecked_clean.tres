@@ -2,11 +2,11 @@
 
 [ext_resource path="res://data/attack_vfx/swoosh_simple.tres" type="Resource" id=1]
 [ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=2]
+[ext_resource path="res://data/elemental_types/air.tres" type="Resource" id=3]
 [ext_resource path="res://data/hit_vfx/hit.tres" type="Resource" id=4]
 [ext_resource path="res://data/sticker_attribute_profiles/attack.tres" type="Resource" id=5]
 [ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=6]
 [ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_GenericAttack.gd" type="Script" id=7]
-[ext_resource path="res://data/elemental_types/metal.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 7 )
@@ -23,7 +23,7 @@ power = 20
 physicality = 0
 target_type = 1
 default_target = 0
-elemental_types = [ ExtResource( 8 ) ]
+elemental_types = [ ExtResource( 3 ) ]
 accuracy = 100
 unavoidable = false
 crit_rate_numerator = 1
@@ -60,8 +60,8 @@ no_chemistry_against_types = [  ]
 no_damage_against_allies = true
 purge_status_effects = [ ExtResource( 2 ), ExtResource( 6 ) ]
 purge_mode = 1
-purge_amount = 1
-purge_status_effects_toast = "SIF_BATTLE_TOAST_WEEDS_REMOVED"
+purge_amount = 2
+purge_status_effects_toast = "SIF_BATTLE_TOAST_PECKED_CLEAN"
 purge_heal_percent = 5
 purge_heal_absolute = 0
 purge_heal_max_stacks = 0

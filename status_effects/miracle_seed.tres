@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://mods/synergy_is_fun/status_effect_scripts/MiracleSeed.gd" type="Script" id=1]
+[ext_resource path="res://mods/synergy_is_fun/status_effect_scripts/SIF_MiracleSeed.gd" type="Script" id=1]
 [ext_resource path="res://mods/synergy_is_fun/ui/miracle_seed.png" type="Texture" id=2]
 
 [resource]

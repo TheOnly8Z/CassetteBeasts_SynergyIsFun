@@ -27,11 +27,7 @@ export (int) var absolute_return_damage:int = 0
 export (int, 0, 100) var percent_return_damage:int = 0
 export (String, "default", "max_hp", "melee_attack", "melee_defense", "ranged_attack", "ranged_defense", "speed") var attack_stat:String = "default"
 
-func contact(battle, user, target, damage, attack_params):
-	var type_match = _has_type_match(target, status_effect_only_for_target_types)
-	
-	# Purge status effects
-	var purge_status_effects = attack_params.get("purge_status_effects", self.purge_status_effects)
+func purge_effects(battle, user, target):
 	if purge_status_effects.size() > 0:
 		var num_removed:int = 0
 		var stacks_removed:int = 0
@@ -61,6 +57,12 @@ func contact(battle, user, target, damage, attack_params):
 			var toast = battle.create_toast()
 			toast.setup_text(purge_status_effects_toast)
 			battle.queue_play_toast(toast, target.slot)
+
+func contact(battle, user, target, damage, attack_params):
+	var type_match = _has_type_match(target, status_effect_only_for_target_types)
+	print("contact")
+	# Purge status effects
+	purge_effects(battle, user, target)
 
 	# Apply status effects
 	var target_status_effects = attack_params.get("target_status_effects", self.target_status_effects)
@@ -179,7 +181,6 @@ func launch_attack(battle, user, targets:Array, attack_params = {}, on_contact =
 	
 	battle.events.notify("launch_attack_ending", launch_notify_args)
 
-
 func _has_type_match(target, types:Array)->bool:
 	if types.size() > 0:
 		for type in types:
@@ -198,3 +199,24 @@ func _get_damage_to_user(user)->int:
 	var attack = user.status.get_attack_variant(physicality)
 	var defense = user.status.get_defense_variant(physicality)
 	return BattleFormulas.get_damage(user.battle.rand, return_damage_power, level, attack, defense, [], []) + absolute_return_damage + percent_return_damage * user.status.max_hp / 100
+
+func get_effect_hint(user, target):
+	var status_hints = []
+	var attack_types = get_types(user)
+	
+	var decoy = target.status.get_current_decoy_effect()
+	if decoy != null:
+		status_hints += decoy.effect.get_decoy_hit_effect_hint(decoy, attack_types)
+	else :
+		var defense_types = []
+		for type in target.status.get_types():
+			if not no_chemistry_against_types.has(type):
+				defense_types.push_back(type)
+		var hint = ElementalReactions.get_reaction_hint(attack_types, defense_types)
+		status_hints += hint
+
+	status_hints += _get_effect_hint_extra_statuses(user, target)
+
+	if status_hints.size() > 0:
+		return status_hints
+	return Vector3(0, 1, 0)

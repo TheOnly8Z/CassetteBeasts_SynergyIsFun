@@ -7,7 +7,7 @@
 [ext_resource path="res://data/sticker_attribute_profiles/attack.tres" type="Resource" id=5]
 [ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=6]
 [ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_GenericAttack.gd" type="Script" id=7]
-[ext_resource path="res://data/elemental_types/air.tres" type="Resource" id=8]
+[ext_resource path="res://data/elemental_types/metal.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 7 )
@@ -17,7 +17,7 @@ description = "SIF_MOVE_DESCRIPTION_SHEAR_FORCE"
 title_override = ""
 tags = [ "sif", "sif_set1", "hands", "sword", "offense" ]
 priority = 0
-cost = 1
+cost = 3
 is_debug = false
 is_passive_only = false
 power = 30

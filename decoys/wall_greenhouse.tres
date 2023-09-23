@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://data/Decoy.gd" type="Script" id=1]
+[ext_resource path="res://mods/synergy_is_fun/ui/wall_greenhouse.png" type="Texture" id=2]
+[ext_resource path="res://data/elemental_types/glass.tres" type="Resource" id=3]
+[ext_resource path="res://sprites/vfx/wall/glass_wall.json" type="PackedScene" id=4]
+[ext_resource path="res://sfx/walls/spawn_glass.wav" type="AudioStream" id=5]
+
+[resource]
+script = ExtResource( 1 )
+name = "STATUS_GREENHOUSE_WALL_NAME"
+sprite = ExtResource( 4 )
+spawn_sound = ExtResource( 5 )
+despawn_sound = ExtResource( 5 )
+icon = ExtResource( 2 )
+elemental_type = ExtResource( 3 )
+attack_position = Vector2( 0, 0 )
