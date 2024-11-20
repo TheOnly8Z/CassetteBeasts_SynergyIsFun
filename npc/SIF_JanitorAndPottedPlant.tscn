@@ -1,20 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://world/behaviors/generic_npc/DialogueNPCBehavior.tscn" type="PackedScene" id=1]
 [ext_resource path="res://mods/synergy_is_fun/npc/SIF_Janitor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://mods/synergy_is_fun/npc/SIF_PottedPlant.tscn" type="PackedScene" id=5]
-[ext_resource path="res://nodes/sprite_container/potted_plant.png" type="Texture" id=6]
 
 [node name="JanitorAndPottedPlant" type="Spatial"]
 
 [node name="Janitor" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+sprite_body = null
+character = null
+human_part_names/body = "jacket2"
+human_part_names/arms = "jacket2"
+human_part_names/head = "mask1"
 
 [node name="PottedPlant" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
 
 [node name="InteractionBehavior" parent="PottedPlant" instance=ExtResource( 1 )]
-portrait = ExtResource( 6 )
 title = "SIF_POTTED_PLANT_NAME_SHORT"
 dialogue = [ "SIF_POTTED_PLANT_INTERACT_1", "SIF_POTTED_PLANT_INTERACT_2", "SIF_POTTED_PLANT_INTERACT_3" ]
 face_player = false

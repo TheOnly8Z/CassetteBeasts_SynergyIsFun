@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://data/battle_move_scripts/PureStatus.gd" type="Script" id=1]
-[ext_resource path="res://data/elemental_types/earth.tres" type="Resource" id=2]
+[ext_resource path="res://data/elemental_types/glass.tres" type="Resource" id=2]
 [ext_resource path="res://data/sticker_attribute_profiles/status.tres" type="Resource" id=3]
 [ext_resource path="res://mods/synergy_is_fun/status_effects/wall_greenhouse.tres" type="Resource" id=4]
 

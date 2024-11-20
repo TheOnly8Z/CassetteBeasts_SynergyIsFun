@@ -46,6 +46,8 @@ extents = Vector3( 14, 1, 14 )
 
 [node name="RangerTrader" parent="." instance=ExtResource( 22 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1929, 0, 10.8534 )
+sprite_body = null
+character = null
 
 [node name="RangerBodyBuilder" parent="." instance=ExtResource( 23 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6441, 0, 10.5111 )
