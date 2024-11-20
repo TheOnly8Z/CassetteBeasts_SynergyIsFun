@@ -1,8 +1,7 @@
-[gd_resource type="Resource" load_steps=9 format=2]
+[gd_resource type="Resource" load_steps=8 format=2]
 
 [ext_resource path="res://data/elemental_types/water.tres" type="Resource" id=1]
 [ext_resource path="res://data/hit_vfx/hit.tres" type="Resource" id=2]
-[ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=3]
 [ext_resource path="res://data/elemental_types/earth.tres" type="Resource" id=4]
 [ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=5]
 [ext_resource path="res://data/sticker_attribute_profiles/attack.tres" type="Resource" id=6]
@@ -46,8 +45,9 @@ attribute_profile = ExtResource( 6 )
 camera_state_override = ""
 min_hits = 1
 max_hits = 1
-target_status_effects = [ ExtResource( 3 ), ExtResource( 5 ) ]
-user_status_effects = [ ExtResource( 3 ), ExtResource( 5 ) ]
+target_status_effects = [ ExtResource( 5 ) ]
+user_status_effects = [ ExtResource( 5 ) ]
+all_fighters_status_effects = [  ]
 status_effects_to_apply = 1
 status_effect_amount = 3
 status_effect_chance = 50

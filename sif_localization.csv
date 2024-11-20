@@ -36,7 +36,7 @@ SIF_MOVE_DESCRIPTION_CHILLING_GUST,"Hits a whole team, ignoring walls and removi
 SIF_MOVE_GREENHOUSE_NAME,[SIF] Greenhouse
 SIF_MOVE_DESCRIPTION_GREENHOUSE,"Sacrifice 20% of HP to create a wall that will absorb up to 3 hits for up to 3 turns. This wall will also increase all healing received by the owner by 50%."
 SIF_MOVE_WHAT_WE_SOW_NAME,[SIF] What We Sow
-SIF_MOVE_DESCRIPTION_WHAT_WE_SOW,"Hits everyone on the battlefield except the user. Targets are hit by an additional 20 Water-type damage. Chance to apply Healing Leaf or Leeched on targets and the user."
+SIF_MOVE_DESCRIPTION_WHAT_WE_SOW,"Hits everyone on the battlefield except the user. Targets are hit by an additional 20 Water-type damage. Chance to apply Healing Leaf on targets and the user."
 SIF_MOVE_WHAT_WE_REAP_NAME,[SIF] What We Reap
 SIF_MOVE_DESCRIPTION_WHAT_WE_REAP,"Hits one target. If used after What We Sow, the move will land critical hits on targets with Plant effects."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed

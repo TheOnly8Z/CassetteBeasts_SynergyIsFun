@@ -48,6 +48,7 @@ min_hits = 1
 max_hits = 1
 target_status_effects = [  ]
 user_status_effects = [  ]
+all_fighters_status_effects = [  ]
 status_effects_to_apply = 0
 status_effect_amount = 3
 status_effect_chance = 0
