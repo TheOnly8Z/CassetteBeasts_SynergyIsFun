@@ -82,6 +82,11 @@ sprite_part_names = {
 "legs": "generic",
 "wings": "generic"
 }
+sprite_body = null
+character = null
+human_part_names/body = "jacket2"
+human_part_names/arms = "jacket2"
+human_part_names/head = "mask1"
 human_colors/body_color_1 = 2
 human_colors/body_color_2 = 5
 human_colors/eye_color = 6
@@ -90,6 +95,9 @@ human_colors/hair_accessory_color = 3
 human_colors/hair_color = 3
 human_colors/legs_color = 6
 human_colors/shoe_color = 12
+
+[node name="Sprite" parent="." index="2"]
+sprite_rotation = Vector3( 0, 0, 0 )
 
 [node name="HumanSprite" parent="Sprite" index="0"]
 part_names = {
@@ -150,6 +158,10 @@ human_part_names = {
 }
 copy_human_sprite = NodePath("../..")
 ai = ExtResource( 15 )
+human_part_names/body = ""
+human_part_names/hair = ""
+human_part_names/head = ""
+human_part_names/legs = ""
 human_colors/body_color_1 = -1
 human_colors/body_color_2 = -1
 human_colors/eye_color = -1
@@ -198,6 +210,10 @@ human_part_names = {
 "legs": ""
 }
 ai = ExtResource( 4 )
+human_part_names/body = "jacket"
+human_part_names/hair = "bald"
+human_part_names/head = "beard1"
+human_part_names/legs = ""
 human_colors/body_color_1 = 5
 human_colors/body_color_2 = 14
 human_colors/eye_color = 16

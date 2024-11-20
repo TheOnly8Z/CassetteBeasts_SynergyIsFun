@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://nodes/warp_region/WarpTarget.gd" type="Script" id=1]
-[ext_resource path="res://mods/synergy_is_fun/npc/SIF_JanitorAndPottedPlant.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mods/synergy_is_fun/npc/SIF_Janitor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://world/objects/static_physics/ranger_props/VendingMachine1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodes/camera/WorldCamera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://cutscenes/merchants/TownHall_VendingMachine_InteractionBehavior.tscn" type="PackedScene" id=5]
@@ -57,5 +57,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5142, 1.00136e-05, -8.79396
 
 [node name="Cutscene" parent="VendingMachine1" instance=ExtResource( 5 )]
 
-[node name="Spatial" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75377, 9.05991e-06, -7.4965 )
+[node name="Janitor" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93815, 2.38419e-06, -8.19521 )

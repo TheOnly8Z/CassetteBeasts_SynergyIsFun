@@ -1,0 +1,38 @@
+[gd_resource type="Resource" load_steps=22 format=2]
+
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/growth_chemicals.tres" type="Resource" id=1]
+[ext_resource path="res://data/MonsterTape.gd" type="Script" id=2]
+[ext_resource path="res://data/monster_forms/dandylion.tres" type="Resource" id=3]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/what_we_sow.tres" type="Resource" id=4]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/what_we_reap.tres" type="Resource" id=5]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/greenhouse.tres" type="Resource" id=6]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/dandelion_puff.tres" type="Resource" id=7]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/harvest_season.tres" type="Resource" id=8]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/miracle_seed.tres" type="Resource" id=9]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/chilling_gust.tres" type="Resource" id=10]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/controlled_burn.tres" type="Resource" id=11]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/crop_rotation.tres" type="Resource" id=12]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/shear_force.tres" type="Resource" id=13]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/overgrowth.tres" type="Resource" id=14]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/vine_whip.tres" type="Resource" id=15]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/crop_raze.tres" type="Resource" id=16]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/fertile_soil.tres" type="Resource" id=17]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/rumination.tres" type="Resource" id=18]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/pecked_clean.tres" type="Resource" id=19]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/weedkiller.tres" type="Resource" id=20]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/wild_growth.tres" type="Resource" id=21]
+
+[resource]
+resource_name = "sif dandylion"
+script = ExtResource( 2 )
+name_override = ""
+form = ExtResource( 3 )
+grade = 5
+seed_value = 0
+type_override = [  ]
+type_native = [  ]
+stickers = [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 17 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 21 ) ]
+stat_increments = {
+}
+exp_points = 0
+favorite = false
