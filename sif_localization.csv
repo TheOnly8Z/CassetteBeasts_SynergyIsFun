@@ -12,7 +12,7 @@ SIF_MOVE_DESCRIPTION_WEEDKILLER,"Hits a whole team twice, removing Plant effects
 SIF_MOVE_WILD_GROWTH_NAME,[SIF] Wild Growth
 SIF_MOVE_DESCRIPTION_WILD_GROWTH,"Gives a random target Healing Leaf for 3 turns, at the end of the turn."
 SIF_MOVE_RUMINATION_NAME,[SIF] Rumination
-SIF_MOVE_DESCRIPTION_RUMINATION,"Consume up to 2 turns of Healing Leaf for 5% of Max HP each, at the end of the turn."
+SIF_MOVE_DESCRIPTION_RUMINATION,"Consume up to 2 turns of Healing Leaf for 4% of Max HP each, at the end of the turn."
 SIF_MOVE_GROWTH_CHEMICALS_NAME,[SIF] Growth Chemicals
 SIF_MOVE_DESCRIPTION_GROWTH_CHEMICALS,"Poisons the user for 3 turns to create a Plant Wall that will absorb up to 5 hits for up to 5 turns.\nFails if the user is already poisoned."
 SIF_MOVE_MIRACLE_SEED_NAME,[SIF] Miracle Seed
