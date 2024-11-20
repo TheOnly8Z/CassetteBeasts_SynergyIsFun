@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://data/battle_moves/boil.tres" type="Resource" id=1]
 [ext_resource path="res://data/battle_moves/bite.tres" type="Resource" id=2]
@@ -48,6 +48,7 @@
 [ext_resource path="res://data/monster_forms/burnace.tres" type="Resource" id=46]
 [ext_resource path="res://mods/synergy_is_fun/sprites/janitor.png" type="Texture" id=47]
 [ext_resource path="res://addons/misc_utils/actions/composites/Selector.gd" type="Script" id=48]
+[ext_resource path="res://nodes/actions/CloseMessageDialogAction.gd" type="Script" id=49]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 31 )
@@ -286,3 +287,6 @@ script = ExtResource( 45 )
 script = ExtResource( 36 )
 portrait = ExtResource( 47 )
 title = "{pawn}"
+
+[node name="CloseMessageDialogAction" type="Node" parent="InteractionBehavior/Cutscene/Selector/Sequence2" index="1"]
+script = ExtResource( 49 )
