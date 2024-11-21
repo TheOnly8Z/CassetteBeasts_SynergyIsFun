@@ -23,7 +23,9 @@ Contains 20 moves that synergize with Healing Leaf, Leeched and Plant Wall statu
 
 ## NPC Battles
 
-There is currently one scripted NPC battle utilizing SIF stickers. They can be found in the **Mod Club Station** from Mod Utils. More NPCs and better integration into the game world may come in the future.
+NPC battle cut for now due to issue with Mod Club Station.
+
+~~There is currently one scripted NPC battle utilizing SIF stickers. They can be found in the **Mod Club Station** from Mod Utils. More NPCs and better integration into the game world may come in the future.~~
 
 ## Compatibility
 
