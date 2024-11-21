@@ -8,16 +8,16 @@ const MOD_STRINGS:Array = [
 
 
 # A Mod Utils bug is erroring at the end of battles, so this is cut for now.
-#const MODUTILS: Dictionary = {
-#	"world": {
-#		"modclub_population": [
+const MODUTILS: Dictionary = {
+	"world": {
+		"modclub_population": [
 #			{
 #				"scene": "res://mods/synergy_is_fun/npc/SIF_Janitor.tscn",
 #				"mode": "standing",
 #			},
-#		],
-#	},
-#}
+		],
+	},
+}
 
 func _init():
 	
