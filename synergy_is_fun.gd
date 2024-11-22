@@ -6,7 +6,6 @@ const MOD_STRINGS:Array = [
 	preload("sif_localization.en.translation"),
 ]
 
-
 # A Mod Utils bug is erroring at the end of battles, so this is cut for now.
 const MODUTILS: Dictionary = {
 	"world": {
@@ -18,6 +17,11 @@ const MODUTILS: Dictionary = {
 		],
 	},
 }
+
+const SIF_PACKS:Array = [
+	"sif_set1",
+	"sif_set2",
+]
 
 func _init():
 	
@@ -51,14 +55,18 @@ func _on_VendingMachine1_ready(scene: Node) -> void:
 func _init_stickers():
 	if sif_loaded:
 		return
-		
-	var battle_moves = Datatables.load("res://mods/synergy_is_fun/battle_moves/").table
-
-	for move_name in battle_moves:
-		_add_sticker(battle_moves[move_name], "sif_" + move_name)
+	
+	var total = 0
+	
+	for path in SIF_PACKS:
+		var battle_moves = Datatables.load("res://mods/synergy_is_fun/battle_moves/" + path + "/").table
+		for move_name in battle_moves:
+			_add_sticker(battle_moves[move_name], "sif_" + move_name)
+		print("[SIF] Loaded " + path + " containing " + str(battle_moves.size()) + " stickers.")
+		total += battle_moves.size()
 
 	sif_loaded = true
-	print("[SIF] Loaded " + str(battle_moves.size()) + " stickers.")
+	print("[SIF] All packs loaded. Total " + str(total) + " stickers.")
 
 func _add_sticker(sticker, sticker_id):
 	# Add to global move list. Used in dev console, custom battle scene, etc.

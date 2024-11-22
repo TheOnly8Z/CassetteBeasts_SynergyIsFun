@@ -4,7 +4,7 @@
 [ext_resource path="res://data/status_effects/multitarget.tres" type="Resource" id=2]
 [ext_resource path="res://data/status_effects/ap_boost.tres" type="Resource" id=3]
 [ext_resource path="res://data/battle_moves/echolocation.tres" type="Resource" id=4]
-[ext_resource path="res://mods/synergy_is_fun/battle_moves/graze.tres" type="Resource" id=5]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/sif_set1/graze.tres" type="Resource" id=5]
 [ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=6]
 [ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=7]
 [ext_resource path="res://mods/synergy_is_fun/ai/SIF_WeightedAIMovePreference.gd" type="Script" id=8]
@@ -12,12 +12,13 @@
 [ext_resource path="res://data/battle_moves/nurse.tres" type="Resource" id=10]
 [ext_resource path="res://data/status_effects/ap_drain.tres" type="Resource" id=11]
 [ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=12]
-[ext_resource path="res://mods/synergy_is_fun/battle_moves/weedkiller.tres" type="Resource" id=14]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/sif_set1/weedkiller.tres" type="Resource" id=14]
 [ext_resource path="res://mods/synergy_is_fun/ai/SIF_PurgeStatusMovePreference.gd" type="Script" id=25]
-[ext_resource path="res://mods/synergy_is_fun/battle_moves/overgrowth.tres" type="Resource" id=27]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/sif_set1/overgrowth.tres" type="Resource" id=27]
 [ext_resource path="res://data/sticker_attributes/multitarget.tres" type="Resource" id=28]
 [ext_resource path="res://data/battle_moves/blood_donation.tres" type="Resource" id=29]
 [ext_resource path="res://data/battle_moves/throw.tres" type="Resource" id=30]
+
 
 [node name="JanitorAI" type="Node"]
 script = ExtResource( 1 )

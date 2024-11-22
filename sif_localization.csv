@@ -39,6 +39,10 @@ SIF_MOVE_WHAT_WE_SOW_NAME,[SIF] What We Sow
 SIF_MOVE_DESCRIPTION_WHAT_WE_SOW,"Hits everyone on the battlefield except the user. Targets are hit by an additional 20 Water-type damage. Chance to apply Healing Leaf on targets and the user."
 SIF_MOVE_WHAT_WE_REAP_NAME,[SIF] What We Reap
 SIF_MOVE_DESCRIPTION_WHAT_WE_REAP,"Hits one target. If used after What We Sow, the move will land critical hits on targets with Plant effects."
+SIF_MOVE_HYPERSHOCK_NAME,[SIF] Hypershock
+SIF_MOVE_DESCRIPTION_HYPERSHOCK,"Hits one target. Inflicts Resonance on the user."
+SIF_MOVE_HYPERTONE_NAME,[SIF] Hypertone
+SIF_MOVE_DESCRIPTION_HYPERTONE,"Hits a whole team. Inflicts Resonance on the user."
 SIF_BATTLE_TOAST_WEEDS_REMOVED,Weeds Removed
 SIF_BATTLE_TOAST_WEEDS_GRAZED,Grazed
 SIF_BATTLE_TOAST_HARVEST_SEASON,Harvested
@@ -53,6 +57,8 @@ STATUS_GREENHOUSE_WALL_NAME,Greenhouse Wall
 STATUS_GREENHOUSE_WALL_DESCRIPTION,"Walls absorb a certain number of incoming hits. Type-advantaged attacks immediately break walls. In addition to standard Wall behavior, Greenhouse Wall increases healing received by 50% for the owner."
 BOOSTER_PACK_SIF_SET1_NAME,"[SIF] 'Terra's Bounty' Sticker Pack"
 BOOSTER_PACK_SIF_SET1_DESCRIPTION,"A themed booster pack of 3 stickers, all guaranteed to be uncommon or rare!"
+BOOSTER_PACK_SIF_SET2_NAME,"[SIF] 'Mirroring Echoes' Sticker Pack"
+BOOSTER_PACK_SIF_SET2_DESCRIPTION,"A themed booster pack of 3 stickers, all guaranteed to be uncommon or rare!"
 SIF_JANITOR_NAME_SHORT,"The Janitor"
 SIF_POTTED_PLANT_NAME_SHORT,"The Potted Plant"
 SIF_JANITOR_NAME,"The Janitor"

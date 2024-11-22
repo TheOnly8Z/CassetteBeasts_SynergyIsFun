@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://ui/icons/types/element_glass.png" type="Texture" id=1]
+[ext_resource path="res://data/items/metal.tres" type="Resource" id=2]
+[ext_resource path="res://data/exchange_scripts/LootTableExchange.gd" type="Script" id=3]
+[ext_resource path="res://mods/synergy_is_fun/loot_tables/booster_pack_sif_set2.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 3 )
+max_amount = 10
+only_sold_if_unowned = false
+name = "BOOSTER_PACK_SIF_SET2_NAME"
+description = "BOOSTER_PACK_SIF_SET2_DESCRIPTION"
+icon = ExtResource( 1 )
+rarity = 0
+amount = 1
+service = ""
+currencies = [ ExtResource( 2 ) ]
+prices = [ 50 ]
+loot_table = ExtResource( 4 )
+loot_value = 3000

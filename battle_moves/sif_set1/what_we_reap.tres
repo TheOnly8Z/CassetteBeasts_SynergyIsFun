@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=9 format=2]
 
-[ext_resource path="res://mods/synergy_is_fun/battle_moves/what_we_sow.tres" type="Resource" id=1]
+[ext_resource path="res://mods/synergy_is_fun/battle_moves/sif_set1/what_we_sow.tres" type="Resource" id=1]
 [ext_resource path="res://data/hit_vfx/hit.tres" type="Resource" id=2]
 [ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=3]
 [ext_resource path="res://data/attack_vfx/heroic_blade.tres" type="Resource" id=4]

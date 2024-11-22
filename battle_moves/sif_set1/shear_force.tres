@@ -1,16 +1,16 @@
 [gd_resource type="Resource" load_steps=9 format=2]
 
-[ext_resource path="res://data/attack_vfx/wallop.tres" type="Resource" id=1]
+[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_GenericAttack.gd" type="Script" id=1]
 [ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=2]
-[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=3]
-[ext_resource path="res://data/hit_vfx/hit.tres" type="Resource" id=4]
-[ext_resource path="res://data/sticker_attribute_profiles/attack.tres" type="Resource" id=5]
-[ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=6]
-[ext_resource path="res://mods/synergy_is_fun/battle_move_scripts/SIF_GenericAttack.gd" type="Script" id=7]
+[ext_resource path="res://data/hit_vfx/hit.tres" type="Resource" id=3]
+[ext_resource path="res://data/elemental_types/plant.tres" type="Resource" id=4]
+[ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=5]
+[ext_resource path="res://data/sticker_attribute_profiles/attack.tres" type="Resource" id=6]
+[ext_resource path="res://data/attack_vfx/wallop.tres" type="Resource" id=7]
 [ext_resource path="res://data/elemental_types/metal.tres" type="Resource" id=8]
 
 [resource]
-script = ExtResource( 7 )
+script = ExtResource( 1 )
 name = "SIF_MOVE_SHEAR_FORCE_NAME"
 category_name = "MOVE_CATEGORY_MELEE"
 description = "SIF_MOVE_DESCRIPTION_SHEAR_FORCE"
@@ -35,14 +35,14 @@ fade_lights_during_attack = false
 windup_animation = "windup"
 attack_animation = "attack"
 windup_sfx_override = [  ]
-attack_vfx = [ ExtResource( 1 ) ]
+attack_vfx = [ ExtResource( 7 ) ]
 play_attack_vfx_against_allies = true
 attack_duration = 0.0
-hit_vfx = [ ExtResource( 4 ) ]
+hit_vfx = [ ExtResource( 3 ) ]
 hit_delay = 0.0
 disable_melee_movement = false
 can_be_copied = true
-attribute_profile = ExtResource( 5 )
+attribute_profile = ExtResource( 6 )
 camera_state_override = ""
 min_hits = 2
 max_hits = 2
@@ -56,11 +56,11 @@ status_effect_only_for_target_types = [  ]
 target_status_only_if_not_had_turn = false
 destroys_walls = false
 require_target_tag = ""
-destroys_walls_of_type = [ ExtResource( 3 ) ]
+destroys_walls_of_type = [ ExtResource( 4 ) ]
 always_critical_against_types = [  ]
 no_chemistry_against_types = [  ]
 no_damage_against_allies = false
-purge_status_effects = [ ExtResource( 2 ), ExtResource( 6 ) ]
+purge_status_effects = [ ExtResource( 2 ), ExtResource( 5 ) ]
 purge_mode = 0
 purge_amount = 1
 purge_status_effects_toast = "SIF_BATTLE_TOAST_WEEDS_REMOVED"
